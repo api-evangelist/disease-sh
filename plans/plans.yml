@@ -1,0 +1,14 @@
+plans:
+  - name: Free
+    description: >-
+      disease.sh is entirely free and open. No account, API key, or payment
+      is required. All 41 endpoints are available to every user at no cost.
+    free: true
+    authentication: none
+    features:
+      - All COVID-19 endpoints (Worldometers, JHUCSSE, NYT, Apple, Government)
+      - Vaccine and therapeutic coverage endpoints
+      - COVID-19 variants data
+      - CDC influenza surveillance endpoints (ILINet, USCL, USPHL)
+      - JSON responses with CORS enabled
+      - No signup required

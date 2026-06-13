@@ -1,0 +1,13 @@
+rateLimits:
+  description: >-
+    disease.sh does not publish explicit rate limit thresholds. The API is
+    free and open with no authentication. Users are expected to cache responses
+    where possible as data updates are not real-time. The service has handled
+    over 100 billion requests to date and is designed for broad public access.
+  published: false
+  notes:
+    - No documented per-minute or per-day request caps as of 2026-06-13.
+    - Responses include a cached timestamp; consumers should respect update
+      intervals rather than polling aggressively.
+    - For high-volume production use, self-hosting the open-source API
+      (github.com/disease-sh/API) is recommended.

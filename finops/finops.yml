@@ -1,0 +1,13 @@
+finops:
+  description: >-
+    disease.sh is a fully free, community-maintained open-source API. There
+    are no paid tiers, usage fees, or overage charges. The project is
+    open-source under the GNU GPL v3.0 license and available for self-hosting.
+  model: free-open-source
+  cost: $0
+  billingURL: null
+  pricingURL: null
+  selfHosting:
+    available: true
+    license: GNU GPL v3.0
+    repository: https://github.com/disease-sh/API

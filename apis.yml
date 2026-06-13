@@ -1,0 +1,69 @@
+aid: disease-sh
+name: disease.sh
+description: >-
+  disease.sh is an open API providing reliable global disease statistics,
+  including COVID-19 worldwide and country-level data, US state breakdowns,
+  historical case counts, vaccine and therapeutic coverage, influenza outbreak
+  data from the CDC, and mobility metrics from Apple and government sources.
+  The API is completely free to use, requires no authentication, and supports
+  CORS for browser-based integrations.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+type: Index
+tags:
+  - COVID-19
+  - Disease
+  - Health
+  - Epidemiology
+  - Influenza
+  - Vaccine
+  - Open Data
+  - Public Health
+apis:
+  - name: disease.sh Open Disease API
+    description: >-
+      Third-party open API for reliable global disease information, offering
+      41 endpoints across COVID-19 statistics (Worldometers, JHUCSSE, NYT,
+      Apple, government sources), vaccine and therapeutic coverage, variant
+      data, and CDC influenza surveillance data. No authentication is required;
+      all responses are JSON.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://disease.sh
+    baseURL: https://disease.sh/v3
+    tags:
+      - COVID-19
+      - Influenza
+      - Disease Statistics
+      - Vaccine
+      - Health Data
+    properties:
+      - type: Documentation
+        url: https://disease.sh/docs/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/disease-sh/API/master/public/apidocs/swagger_v3.json
+      - type: GitHub
+        url: https://github.com/disease-sh/API
+      - type: Plans
+        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+      - type: RateLimits
+        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+      - type: FinOps
+        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+    contact:
+      - FN: disease.sh Community
+        url: https://disease.sh
+common:
+  - type: GitHub
+    url: https://github.com/disease-sh
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/disease-sh/API/master/public/apidocs/swagger_v3.json
+  - type: TermsOfService
+    url: https://disease.sh/tos
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
