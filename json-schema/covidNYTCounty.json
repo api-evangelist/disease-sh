@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidNYTCounty.json",
+  "title": "covidNYTCounty",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "county": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "fips": {
+        "type": "string"
+      },
+      "cases": {
+        "type": "number"
+      },
+      "deaths": {
+        "type": "number"
+      }
+    }
+  }
+}

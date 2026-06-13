@@ -1,0 +1,10 @@
+{
+  "name": "countrySimpleVaccineTimeline",
+  "summary": "Simple Vaccine Timeline",
+  "value": {
+    "country": "USA",
+    "timeline": {
+      "4/25/2021": 1000
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/therapeutics.json",
+  "title": "therapeutics",
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "totalCandidates": {
+      "type": "string"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/phases"
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/therapeutic"
+      }
+    }
+  }
+}

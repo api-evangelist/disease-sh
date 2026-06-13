@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/variantsCountriesECDC.json",
+  "title": "variantsCountriesECDC",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "updated": {
+        "type": "number",
+        "format": "date"
+      },
+      "country": {
+        "type": "string"
+      },
+      "yearWeek": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "newCases": {
+        "type": "number"
+      },
+      "numberSequenced": {
+        "type": "number"
+      },
+      "percentSequenced": {
+        "type": "number"
+      },
+      "validDenominator": {
+        "type": "string"
+      },
+      "variant": {
+        "type": "string"
+      },
+      "numberDetectionsVariant": {
+        "type": "number"
+      },
+      "numberSequencedKnownVariant": {
+        "type": "number"
+      },
+      "percentVariant": {
+        "type": "number"
+      }
+    }
+  }
+}

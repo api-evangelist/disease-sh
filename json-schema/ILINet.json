@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/ILINet.json",
+  "title": "ILINet",
+  "properties": {
+    "week": {
+      "type": "string"
+    },
+    "age 5-24": {
+      "type": "number"
+    },
+    "age 25-49": {
+      "type": "number"
+    },
+    "age 50-64": {
+      "type": "number"
+    },
+    "age 64+": {
+      "type": "number"
+    },
+    "totalILI": {
+      "type": "number"
+    },
+    "totalPatients": {
+      "type": "number"
+    },
+    "percentUnweightedILI": {
+      "type": "number"
+    },
+    "percentWeightedILI": {
+      "type": "number"
+    }
+  }
+}

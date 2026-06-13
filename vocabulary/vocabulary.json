@@ -1,0 +1,461 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "disease.sh API Vocabulary",
+  "description": "Terms, concepts, and schema names used in the disease.sh Open Disease API",
+  "tags": [
+    {
+      "name": "COVID-19: Apple",
+      "description": "(COVID-19 related mobility trend data from Apple, updated every 24 hours)"
+    },
+    {
+      "name": "COVID-19: Government",
+      "description": "(COVID-19 individual government reported data, updated every 24 hours)"
+    },
+    {
+      "name": "COVID-19: JHUCSSE",
+      "description": "(COVID-19 data sourced from Johns Hopkins University, updated every 10 minutes)"
+    },
+    {
+      "name": "COVID-19: NYT",
+      "description": "(COVID-19 data sourced from the New York Times, updated every 24 hours)"
+    },
+    {
+      "name": "COVID-19: Therapeutics",
+      "description": "(COVID-19 therapeutic trial data from raps.org, updated every 24 hours)"
+    },
+    {
+      "name": "COVID-19: Vaccine",
+      "description": "(COVID-19 vaccine trial data from raps.org, updated every 24 hours)"
+    },
+    {
+      "name": "COVID-19: Variants",
+      "description": "(COVID-19 data from The European Surveillance System -TESSy, provided by [Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden]  https://www.ecdc.europa.eu and released by ECDC updated every week)"
+    },
+    {
+      "name": "COVID-19: Worldometers",
+      "description": "(COVID-19 data sourced from Worldometers, updated every 10 minutes)"
+    },
+    {
+      "name": "Influenza: CDC",
+      "description": "(Influenza data reported by the United States CDC, updated every 24 hours)"
+    }
+  ],
+  "schemas": [
+    "covidAll",
+    "covidState",
+    "covidStates",
+    "covidContinent",
+    "covidContinents",
+    "covidCountry",
+    "covidCountries",
+    "covidJHUCountries",
+    "covidJHUCounty",
+    "covidJHUCounties",
+    "covidHistorical",
+    "covidHistoricalAll",
+    "covidHistoricalCountry",
+    "covidHistoricalCountries",
+    "covidHistoricalUSCounties",
+    "covidHistoricalUSCounty",
+    "covidHistoricalProvince",
+    "covidHistoricalProvinces",
+    "covidNYTState",
+    "covidNYTCounty",
+    "covidNYTUSA",
+    "covidAppleCountries",
+    "covidAppleSubregions",
+    "covidAppleData",
+    "covidGov",
+    "influenzaILINet",
+    "ILINet",
+    "influenzaUSCL",
+    "USCL",
+    "vaccines",
+    "vaccine",
+    "phases",
+    "vaccineCoverage",
+    "vaccineCountriesCoverage",
+    "vaccineCountryCoverage",
+    "vaccineStatesCoverage",
+    "vaccineStateCoverage",
+    "simpleVaccineTimeline",
+    "fullVaccineTimeline",
+    "therapeutics",
+    "therapeutic",
+    "variantsECDC",
+    "variantsCountriesECDC",
+    "influenzaUSPHL",
+    "USPHL"
+  ],
+  "operations": [
+    {
+      "operationId": "",
+      "summary": "Get global COVID-19 totals for today, yesterday and two days ago",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/all",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for all US States",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/states",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for specific US State(s)",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/states/{states}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for all continents",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/continents",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for a specific continent",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/continents/{continent}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for all countries",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/countries",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for a specific country",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/countries/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for a specific set of countries",
+      "tags": [
+        "COVID-19: Worldometers"
+      ],
+      "path": "/v3/covid-19/countries/{countries}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for all countries and their provinces",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/jhucsse",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for all US counties",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/jhucsse/counties",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 totals for a specific county",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/jhucsse/counties/{county}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for all countries and their provinces",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get global accumulated COVID-19 time series data",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/all",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a specific country",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a specific set of countries",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/{countries}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a specific province in a country",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/{country}/{province}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a set of provinces in a country",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/{country}/{provinces}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get all possible US States to query the /historical/usacounties/{state} endpoint with",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/usacounties",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for all counties in a specified US state",
+      "tags": [
+        "COVID-19: JHUCSSE"
+      ],
+      "path": "/v3/covid-19/historical/usacounties/{state}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for all states, with an entry for each day since the pandemic began",
+      "tags": [
+        "COVID-19: NYT"
+      ],
+      "path": "/v3/covid-19/nyt/states",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a state or set of states, with an entry for each day since the pandemic began",
+      "tags": [
+        "COVID-19: NYT"
+      ],
+      "path": "/v3/covid-19/nyt/states/{state}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for all available US counties, with an entry for each day since the pandemic began",
+      "tags": [
+        "COVID-19: NYT"
+      ],
+      "path": "/v3/covid-19/nyt/counties",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for a county or set of counties, with an entry for each day since the pandemic began",
+      "tags": [
+        "COVID-19: NYT"
+      ],
+      "path": "/v3/covid-19/nyt/counties/{county}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 time series data for the entire USA, with an entry for each day since the pandemic began",
+      "tags": [
+        "COVID-19: NYT"
+      ],
+      "path": "/v3/covid-19/nyt/usa",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get a list of supported countries for Apple mobility data",
+      "tags": [
+        "COVID-19: Apple"
+      ],
+      "path": "/v3/covid-19/apple/countries",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get a list of supported subregions for specific country in the Apple mobility data set",
+      "tags": [
+        "COVID-19: Apple"
+      ],
+      "path": "/v3/covid-19/apple/countries/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 Apple mobility data for subregions of a country",
+      "tags": [
+        "COVID-19: Apple"
+      ],
+      "path": "/v3/covid-19/apple/countries/{country}/{subregions}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get a list of supported countries for government specific data",
+      "tags": [
+        "COVID-19: Government"
+      ],
+      "path": "/v3/covid-19/gov/",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 government reported data for a specific country",
+      "tags": [
+        "COVID-19: Government"
+      ],
+      "path": "/v3/covid-19/gov/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine/coverage",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine/coverage/countries",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine/coverage/countries/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine/coverage/states",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+      "tags": [
+        "COVID-19: Vaccine"
+      ],
+      "path": "/v3/covid-19/vaccine/coverage/states/{state}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker",
+      "tags": [
+        "COVID-19: Therapeutics"
+      ],
+      "path": "/v3/covid-19/therapeutics",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get a list of supported countries for ECDC specific data",
+      "tags": [
+        "COVID-19: Variants"
+      ],
+      "path": "/v3/covid-19/variants/countries/",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get COVID-19 ECDC reported data for a specific country",
+      "tags": [
+        "COVID-19: Variants"
+      ],
+      "path": "/v3/covid-19/variants/countries/{country}",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control",
+      "tags": [
+        "Influenza: CDC"
+      ],
+      "path": "/v3/influenza/cdc/ILINet",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs",
+      "tags": [
+        "Influenza: CDC"
+      ],
+      "path": "/v3/influenza/cdc/USCL",
+      "method": "GET"
+    },
+    {
+      "operationId": "",
+      "summary": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs",
+      "tags": [
+        "Influenza: CDC"
+      ],
+      "path": "/v3/influenza/cdc/USPHL",
+      "method": "GET"
+    }
+  ]
+}

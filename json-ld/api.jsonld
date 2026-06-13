@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "WebAPI",
+  "name": "disease.sh Open Disease API",
+  "description": "Third Party API for reliable global disease information",
+  "url": "https://disease.sh",
+  "documentation": "https://disease.sh/docs/",
+  "version": "3.0.0",
+  "license": "https://disease.sh/tos",
+  "isAccessibleForFree": true,
+  "termsOfService": "https://disease.sh/tos",
+  "provider": {
+    "@type": "Organization",
+    "name": "disease.sh",
+    "url": "https://disease.sh"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://disease.sh/v3"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidAppleData.json",
+  "title": "covidAppleData",
+  "properties": {
+    "country": {
+      "type": "string"
+    },
+    "subregion": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sub-region": {
+            "type": "string"
+          },
+          "subregion_and_city": {
+            "type": "string"
+          },
+          "geo_type": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "driving": {
+            "type": "number"
+          },
+          "transit": {
+            "type": "number"
+          },
+          "walking": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

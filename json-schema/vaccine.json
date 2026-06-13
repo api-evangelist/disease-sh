@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/vaccine.json",
+  "title": "vaccine",
+  "properties": {
+    "candidate": {
+      "type": "string"
+    },
+    "mechanism": {
+      "type": "string"
+    },
+    "sponsors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "details": {
+      "type": "string"
+    },
+    "trialPhase": {
+      "type": "string"
+    },
+    "institutions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/influenzaUSPHL.json",
+  "title": "influenzaUSPHL",
+  "properties": {
+    "updated": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string"
+    },
+    "data": {
+      "items": {
+        "$ref": "#/components/schemas/USPHL"
+      }
+    }
+  }
+}

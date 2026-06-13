@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidAll.json",
+  "title": "covidAll",
+  "properties": {
+    "updated": {
+      "type": "number"
+    },
+    "cases": {
+      "type": "number"
+    },
+    "todayCases": {
+      "type": "number"
+    },
+    "deaths": {
+      "type": "number"
+    },
+    "recovered": {
+      "type": "number"
+    },
+    "todayRecovered": {
+      "type": "number"
+    },
+    "active": {
+      "type": "number"
+    },
+    "critical": {
+      "type": "number"
+    },
+    "casesPerOneMillion": {
+      "type": "number"
+    },
+    "deathsPerOneMillion": {
+      "type": "number"
+    },
+    "tests": {
+      "type": "number"
+    },
+    "testsPerOneMillion": {
+      "type": "number"
+    },
+    "population": {
+      "type": "number"
+    },
+    "oneCasePerPeople": {
+      "type": "number"
+    },
+    "oneDeathPerPeople": {
+      "type": "number"
+    },
+    "oneTestPerPeople": {
+      "type": "number"
+    },
+    "activePerOneMillion": {
+      "type": "number"
+    },
+    "recoveredPerOneMillion": {
+      "type": "number"
+    },
+    "criticalPerOneMillion": {
+      "type": "number"
+    },
+    "affectedCountries": {
+      "type": "number"
+    }
+  }
+}

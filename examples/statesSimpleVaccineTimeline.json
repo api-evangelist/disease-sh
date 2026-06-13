@@ -1,0 +1,12 @@
+{
+  "name": "statesSimpleVaccineTimeline",
+  "summary": "Simple Vaccine Timeline",
+  "value": [
+    {
+      "state": "California",
+      "timeline": {
+        "4/25/2021": 1000
+      }
+    }
+  ]
+}

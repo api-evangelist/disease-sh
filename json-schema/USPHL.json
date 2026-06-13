@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/USPHL.json",
+  "title": "USPHL",
+  "properties": {
+    "week": {
+      "type": "string"
+    },
+    "A(H3N2v)": {
+      "type": "number"
+    },
+    "A(H1N1)": {
+      "type": "number"
+    },
+    "A(H3)": {
+      "type": "number"
+    },
+    "A(unable to sub-type)+": {
+      "type": "number"
+    },
+    "A(Subtyping not performed)": {
+      "type": "number"
+    },
+    "B": {
+      "type": "number"
+    },
+    "BVIC": {
+      "type": "number"
+    },
+    "totalTests": {
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidCountry.json",
+  "title": "covidCountry",
+  "properties": {
+    "updated": {
+      "type": "number"
+    },
+    "country": {
+      "type": "string"
+    },
+    "countryInfo": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "number",
+          "uniqueItems": true
+        },
+        "iso2": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "iso3": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "lat": {
+          "type": "number"
+        },
+        "long": {
+          "type": "number"
+        },
+        "flag": {
+          "type": "string"
+        }
+      }
+    },
+    "cases": {
+      "type": "number"
+    },
+    "todayCases": {
+      "type": "number"
+    },
+    "deaths": {
+      "type": "number"
+    },
+    "todayDeaths": {
+      "type": "number"
+    },
+    "recovered": {
+      "type": "number"
+    },
+    "todayRecovered": {
+      "type": "number"
+    },
+    "active": {
+      "type": "number"
+    },
+    "critical": {
+      "type": "number"
+    },
+    "casesPerOneMillion": {
+      "type": "number"
+    },
+    "deathsPerOneMillion": {
+      "type": "number"
+    },
+    "tests": {
+      "type": "number"
+    },
+    "testsPerOneMillion": {
+      "type": "number"
+    },
+    "population": {
+      "type": "number"
+    },
+    "continent": {
+      "type": "number"
+    },
+    "oneCasePerPeople": {
+      "type": "number"
+    },
+    "oneDeathPerPeople": {
+      "type": "number"
+    },
+    "oneTestPerPeople": {
+      "type": "number"
+    },
+    "activePerOneMillion": {
+      "type": "number"
+    },
+    "recoveredPerOneMillion": {
+      "type": "number"
+    },
+    "criticalPerOneMillion": {
+      "type": "number"
+    }
+  }
+}

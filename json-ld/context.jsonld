@@ -1,0 +1,134 @@
+{
+  "@context": {
+    "@vocab": "https://disease.sh/vocab/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "updated": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:integer"
+    },
+    "country": {
+      "@id": "schema:addressCountry"
+    },
+    "countryInfo": {
+      "@id": "schema:Country"
+    },
+    "cases": {
+      "@id": "https://disease.sh/vocab/cases",
+      "@type": "xsd:integer"
+    },
+    "deaths": {
+      "@id": "https://disease.sh/vocab/deaths",
+      "@type": "xsd:integer"
+    },
+    "recovered": {
+      "@id": "https://disease.sh/vocab/recovered",
+      "@type": "xsd:integer"
+    },
+    "active": {
+      "@id": "https://disease.sh/vocab/active",
+      "@type": "xsd:integer"
+    },
+    "population": {
+      "@id": "schema:population",
+      "@type": "xsd:integer"
+    },
+    "continent": {
+      "@id": "schema:containedInPlace"
+    },
+    "lat": {
+      "@id": "schema:latitude",
+      "@type": "xsd:float"
+    },
+    "long": {
+      "@id": "schema:longitude",
+      "@type": "xsd:float"
+    },
+    "flag": {
+      "@id": "schema:image"
+    },
+    "tests": {
+      "@id": "https://disease.sh/vocab/tests",
+      "@type": "xsd:integer"
+    },
+    "todayCases": {
+      "@id": "https://disease.sh/vocab/todayCases",
+      "@type": "xsd:integer"
+    },
+    "todayDeaths": {
+      "@id": "https://disease.sh/vocab/todayDeaths",
+      "@type": "xsd:integer"
+    },
+    "todayRecovered": {
+      "@id": "https://disease.sh/vocab/todayRecovered",
+      "@type": "xsd:integer"
+    },
+    "critical": {
+      "@id": "https://disease.sh/vocab/critical",
+      "@type": "xsd:integer"
+    },
+    "affectedCountries": {
+      "@id": "https://disease.sh/vocab/affectedCountries",
+      "@type": "xsd:integer"
+    },
+    "A(H1N1)": "https://disease.sh/vocab/A(H1N1)",
+    "A(H3)": "https://disease.sh/vocab/A(H3)",
+    "A(H3N2v)": "https://disease.sh/vocab/A(H3N2v)",
+    "A(Subtyping not performed)": "https://disease.sh/vocab/A(Subtyping not performed)",
+    "A(unable to sub-type)+": "https://disease.sh/vocab/A(unable to sub-type)+",
+    "B": "https://disease.sh/vocab/B",
+    "BVIC": "https://disease.sh/vocab/BVIC",
+    "activePerOneMillion": "https://disease.sh/vocab/activePerOneMillion",
+    "age 25-49": "https://disease.sh/vocab/age 25-49",
+    "age 5-24": "https://disease.sh/vocab/age 5-24",
+    "age 50-64": "https://disease.sh/vocab/age 50-64",
+    "age 64+": "https://disease.sh/vocab/age 64+",
+    "candidate": "https://disease.sh/vocab/candidate",
+    "candidates": "https://disease.sh/vocab/candidates",
+    "casesPerOneMillion": "https://disease.sh/vocab/casesPerOneMillion",
+    "continentInfo": "https://disease.sh/vocab/continentInfo",
+    "coordinates": "https://disease.sh/vocab/coordinates",
+    "countries": "https://disease.sh/vocab/countries",
+    "county": "https://disease.sh/vocab/county",
+    "criticalPerOneMillion": "https://disease.sh/vocab/criticalPerOneMillion",
+    "data": "https://disease.sh/vocab/data",
+    "date": "https://disease.sh/vocab/date",
+    "deathsPerOneMillion": "https://disease.sh/vocab/deathsPerOneMillion",
+    "details": "https://disease.sh/vocab/details",
+    "developerResearcher": "https://disease.sh/vocab/developerResearcher",
+    "institutions": "https://disease.sh/vocab/institutions",
+    "lastUpdate": "https://disease.sh/vocab/lastUpdate",
+    "mechanism": "https://disease.sh/vocab/mechanism",
+    "medicationClass": "https://disease.sh/vocab/medicationClass",
+    "oneCasePerPeople": "https://disease.sh/vocab/oneCasePerPeople",
+    "oneDeathPerPeople": "https://disease.sh/vocab/oneDeathPerPeople",
+    "oneTestPerPeople": "https://disease.sh/vocab/oneTestPerPeople",
+    "percentPositive": "https://disease.sh/vocab/percentPositive",
+    "percentPositiveA": "https://disease.sh/vocab/percentPositiveA",
+    "percentPositiveB": "https://disease.sh/vocab/percentPositiveB",
+    "percentUnweightedILI": "https://disease.sh/vocab/percentUnweightedILI",
+    "percentWeightedILI": "https://disease.sh/vocab/percentWeightedILI",
+    "phase": "https://disease.sh/vocab/phase",
+    "phases": "https://disease.sh/vocab/phases",
+    "province": "https://disease.sh/vocab/province",
+    "recoveredPerOneMillion": "https://disease.sh/vocab/recoveredPerOneMillion",
+    "source": "https://disease.sh/vocab/source",
+    "sponsors": "https://disease.sh/vocab/sponsors",
+    "state": "https://disease.sh/vocab/state",
+    "stats": "https://disease.sh/vocab/stats",
+    "subregion": "https://disease.sh/vocab/subregion",
+    "subregions": "https://disease.sh/vocab/subregions",
+    "testsPerOneMillion": "https://disease.sh/vocab/testsPerOneMillion",
+    "timeline": "https://disease.sh/vocab/timeline",
+    "totalA": "https://disease.sh/vocab/totalA",
+    "totalB": "https://disease.sh/vocab/totalB",
+    "totalCandidates": "https://disease.sh/vocab/totalCandidates",
+    "totalILI": "https://disease.sh/vocab/totalILI",
+    "totalPatients": "https://disease.sh/vocab/totalPatients",
+    "totalTests": "https://disease.sh/vocab/totalTests",
+    "tradeName": "https://disease.sh/vocab/tradeName",
+    "trialPhase": "https://disease.sh/vocab/trialPhase",
+    "updatedAt": "https://disease.sh/vocab/updatedAt",
+    "week": "https://disease.sh/vocab/week"
+  }
+}

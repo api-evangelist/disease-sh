@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidContinent.json",
+  "title": "covidContinent",
+  "properties": {
+    "updated": {
+      "type": "number"
+    },
+    "cases": {
+      "type": "number"
+    },
+    "todayCases": {
+      "type": "number"
+    },
+    "deaths": {
+      "type": "number"
+    },
+    "todayDeaths": {
+      "type": "number"
+    },
+    "recovered": {
+      "type": "number"
+    },
+    "todayRecovered": {
+      "type": "number"
+    },
+    "active": {
+      "type": "number"
+    },
+    "critical": {
+      "type": "number"
+    },
+    "casesPerOneMillion": {
+      "type": "number"
+    },
+    "deathsPerOneMillion": {
+      "type": "number"
+    },
+    "tests": {
+      "type": "number"
+    },
+    "testsPerOneMillion": {
+      "type": "number"
+    },
+    "population": {
+      "type": "number"
+    },
+    "continent": {
+      "type": "string"
+    },
+    "activePerOneMillion": {
+      "type": "number"
+    },
+    "recoveredPerOneMillion": {
+      "type": "number"
+    },
+    "criticalPerOneMillion": {
+      "type": "number"
+    },
+    "continentInfo": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "long": {
+          "type": "number"
+        }
+      }
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

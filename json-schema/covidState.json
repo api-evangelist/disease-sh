@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidState.json",
+  "title": "covidState",
+  "properties": {
+    "state": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "number"
+    },
+    "cases": {
+      "type": "number"
+    },
+    "todayCases": {
+      "type": "number"
+    },
+    "deaths": {
+      "type": "number"
+    },
+    "todayDeaths": {
+      "type": "number"
+    },
+    "active": {
+      "type": "number"
+    },
+    "casesPerOneMillion": {
+      "type": "number"
+    },
+    "deathsPerOneMillion": {
+      "type": "number"
+    },
+    "tests": {
+      "type": "number"
+    },
+    "testsPerOneMillion": {
+      "type": "number"
+    },
+    "population": {
+      "type": "number"
+    }
+  }
+}

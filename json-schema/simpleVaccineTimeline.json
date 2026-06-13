@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/simpleVaccineTimeline.json",
+  "title": "simpleVaccineTimeline",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "number"
+    }
+  }
+}

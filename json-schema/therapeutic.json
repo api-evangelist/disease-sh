@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/therapeutic.json",
+  "title": "therapeutic",
+  "properties": {
+    "medicationClass": {
+      "type": "string"
+    },
+    "tradeName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "details": {
+      "type": "string"
+    },
+    "developerResearcher": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sponsors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trialPhase": {
+      "type": "string"
+    },
+    "lastUpdate": {
+      "type": "string"
+    }
+  }
+}

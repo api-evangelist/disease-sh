@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidHistoricalProvince.json",
+  "title": "covidHistoricalProvince",
+  "properties": {
+    "country": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "object",
+      "description": "The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query",
+      "properties": {
+        "cases": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "number"
+            }
+          }
+        },
+        "deaths": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "number"
+            }
+          }
+        },
+        "recovered": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

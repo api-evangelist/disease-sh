@@ -1,0 +1,16 @@
+{
+  "name": "stateFullVaccineTimeline",
+  "summary": "Full Vaccine Timeline",
+  "value": {
+    "state": "California",
+    "timeline": [
+      {
+        "total": 1000,
+        "daily": 1000,
+        "totalPerHundred": 1000,
+        "dailyPerMillion": 1000,
+        "date": "4/25/2021"
+      }
+    ]
+  }
+}

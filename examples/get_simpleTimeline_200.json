@@ -1,0 +1,11 @@
+{
+  "operationId": "",
+  "path": "/v3/covid-19/vaccine/coverage/states/{state}",
+  "method": "GET",
+  "statusCode": "200",
+  "mediaType": "application/json",
+  "exampleName": "simpleTimeline",
+  "example": {
+    "$ref": "#/components/examples/stateSimpleVaccineTimeline"
+  }
+}

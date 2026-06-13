@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/disease-sh/main/json-schema/covidNYTUSA.json",
+  "title": "covidNYTUSA",
+  "type": "array",
+  "items": {
+    "properties": {
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "cases": {
+        "type": "number"
+      },
+      "deaths": {
+        "type": "number"
+      }
+    }
+  }
+}
