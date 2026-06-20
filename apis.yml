@@ -7,7 +7,7 @@ description: >-
   data from the CDC, and mobility metrics from Apple and government sources.
   The API is completely free to use, requires no authentication, and supports
   CORS for browser-based integrations.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -30,7 +30,7 @@ apis:
       Apple, government sources), vaccine and therapeutic coverage, variant
       data, and CDC influenza surveillance data. No authentication is required;
       all responses are JSON.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://disease.sh
     baseURL: https://disease.sh/v3
     tags:
