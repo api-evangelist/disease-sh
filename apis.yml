@@ -56,6 +56,8 @@ apis:
       - FN: disease.sh Community
         url: https://disease.sh
 common:
+  - type: DomainSecurity
+    url: security/disease-sh-domain-security.yml
   - type: GitHub
     url: https://github.com/disease-sh
   - type: Documentation
