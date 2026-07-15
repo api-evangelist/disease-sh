@@ -56,6 +56,8 @@ apis:
       - FN: disease.sh Community
         url: https://disease.sh
 common:
+  - type: AgenticAccess
+    url: agentic-access/disease-sh-agentic-access.yml
   - type: DomainSecurity
     url: security/disease-sh-domain-security.yml
   - type: GitHub
