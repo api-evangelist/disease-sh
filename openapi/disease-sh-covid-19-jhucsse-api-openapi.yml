@@ -1,0 +1,436 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: JHUCSSE API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'COVID-19: JHUCSSE'
+  description: (COVID-19 data sourced from Johns Hopkins University, updated every 10 minutes)
+paths:
+  /v3/covid-19/jhucsse:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      summary: Get COVID-19 totals for all countries and their provinces
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidJHUCountries'
+  /v3/covid-19/jhucsse/counties:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      summary: Get COVID-19 totals for all US counties
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidJHUCounties'
+  /v3/covid-19/jhucsse/counties/{county}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: county
+        in: path
+        required: true
+        description: Name of any county in the USA. All counties are listed in the /v3/covid-19/jhucsse/counties/ endpoint
+        type: string
+      summary: Get COVID-19 totals for a specific county
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidJHUCounties'
+  /v3/covid-19/historical:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for all countries and their provinces
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistorical'
+  /v3/covid-19/historical/all:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get global accumulated COVID-19 time series data
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalAll'
+  /v3/covid-19/historical/{country}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A country name, iso2, iso3, or country ID code
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for a specific country
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalCountry'
+  /v3/covid-19/historical/{countries}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: countries
+        in: path
+        required: true
+        description: Multiple country names, iso2, iso3, or country IDs separated by commas
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for a specific set of countries
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalCountries'
+  /v3/covid-19/historical/{country}/{province}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A country name, iso2, iso3, or country ID code
+        type: string
+      - name: province
+        in: path
+        required: true
+        description: Province name. All available names can be found in the /v3/covid-19/historical/{query} endpoint
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for a specific province in a country
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalProvince'
+  /v3/covid-19/historical/{country}/{provinces}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A country name, iso2, iso3, or country ID code
+        type: string
+      - name: provinces
+        in: path
+        required: true
+        description: Provinces spelled correctly separated by ',' or '|' delimiters, never both in the same query
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for a set of provinces in a country
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalProvinces'
+  /v3/covid-19/historical/usacounties:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      summary: Get all possible US States to query the /historical/usacounties/{state} endpoint with
+      description: Returns a list of US States and provinces
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalUSCounties'
+  /v3/covid-19/historical/usacounties/{state}:
+    get:
+      tags:
+      - 'COVID-19: JHUCSSE'
+      parameters:
+      - name: state
+        in: path
+        required: true
+        description: US state name, validated in the array returned from the /v3/covid-19/historical/usacounties endpoint
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      summary: Get COVID-19 time series data for all counties in a specified US state
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidHistoricalUSCounty'
+components:
+  schemas:
+    covidJHUCounty:
+      properties:
+        country:
+          type: string
+        province:
+          type: string
+        county:
+          type: string
+        updatedAt:
+          type: string
+        stats:
+          type: object
+          properties:
+            confirmed:
+              type: number
+            deaths:
+              type: number
+            recovered:
+              type: number
+        coordinates:
+          type: object
+          properties:
+            latitude:
+              type: string
+            longitude:
+              type: string
+    covidHistoricalProvinces:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidHistoricalProvince'
+    covidHistoricalProvince:
+      properties:
+        country:
+          type: string
+        province:
+          type: string
+        timeline:
+          type: object
+          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+          properties:
+            cases:
+              type: object
+              properties:
+                date:
+                  type: number
+            deaths:
+              type: object
+              properties:
+                date:
+                  type: number
+            recovered:
+              type: object
+              properties:
+                date:
+                  type: number
+    covidHistoricalUSCounty:
+      type: array
+      items:
+        type: object
+        properties:
+          province:
+            type: string
+          county:
+            type: string
+          timeline:
+            type: object
+            description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+            properties:
+              cases:
+                type: object
+                properties:
+                  date:
+                    type: number
+              deaths:
+                type: object
+                properties:
+                  date:
+                    type: number
+              recovered:
+                type: object
+                properties:
+                  date:
+                    type: number
+    covidHistoricalCountry:
+      properties:
+        country:
+          type: string
+        province:
+          type: array
+          items:
+            type: string
+        timeline:
+          type: object
+          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+          properties:
+            cases:
+              type: object
+              properties:
+                date:
+                  type: number
+            deaths:
+              type: object
+              properties:
+                date:
+                  type: number
+            recovered:
+              type: object
+              properties:
+                date:
+                  type: number
+    covidJHUCounties:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidJHUCounty'
+    covidHistoricalAll:
+      description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+      properties:
+        cases:
+          type: object
+          properties:
+            date:
+              type: number
+        deaths:
+          type: object
+          properties:
+            date:
+              type: number
+        recovered:
+          type: object
+          properties:
+            date:
+              type: number
+    covidHistoricalCountries:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidHistoricalCountry'
+    covidHistoricalUSCounties:
+      type: array
+      items:
+        type: string
+    covidJHUCountries:
+      properties:
+        country:
+          type: string
+        county:
+          type: string
+        updatedAt:
+          type: string
+        stats:
+          type: object
+          properties:
+            confirmed:
+              type: number
+            deaths:
+              type: number
+            recovered:
+              type: number
+        coordinates:
+          type: object
+          properties:
+            latitude:
+              type: string
+            longitude:
+              type: string
+        province:
+          type: string
+    covidHistorical:
+      type: array
+      items:
+        type: object
+        properties:
+          country:
+            type: string
+          province:
+            type: string
+          timeline:
+            type: object
+            description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+            properties:
+              cases:
+                type: object
+                properties:
+                  date:
+                    type: number
+              deaths:
+                type: object
+                properties:
+                  date:
+                    type: number
+              recovered:
+                type: object
+                properties:
+                  date:
+                    type: number
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API

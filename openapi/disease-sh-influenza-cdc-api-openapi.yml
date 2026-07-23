@@ -1,0 +1,145 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple Influenza: CDC API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'Influenza: CDC'
+  description: (Influenza data reported by the United States CDC, updated every 24 hours)
+paths:
+  /v3/influenza/cdc/ILINet:
+    get:
+      tags:
+      - 'Influenza: CDC'
+      summary: Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/influenzaILINet'
+  /v3/influenza/cdc/USCL:
+    get:
+      tags:
+      - 'Influenza: CDC'
+      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/influenzaUSCL'
+  /v3/influenza/cdc/USPHL:
+    get:
+      tags:
+      - 'Influenza: CDC'
+      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/influenzaUSPHL'
+components:
+  schemas:
+    ILINet:
+      properties:
+        week:
+          type: string
+        age 5-24:
+          type: number
+        age 25-49:
+          type: number
+        age 50-64:
+          type: number
+        age 64+:
+          type: number
+        totalILI:
+          type: number
+        totalPatients:
+          type: number
+        percentUnweightedILI:
+          type: number
+        percentWeightedILI:
+          type: number
+    influenzaUSCL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USCL'
+    influenzaUSPHL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USPHL'
+    influenzaILINet:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/ILINet'
+    USPHL:
+      properties:
+        week:
+          type: string
+        A(H3N2v):
+          type: number
+        A(H1N1):
+          type: number
+        A(H3):
+          type: number
+        A(unable to sub-type)+:
+          type: number
+        A(Subtyping not performed):
+          type: number
+        B:
+          type: number
+        BVIC:
+          type: number
+        totalTests:
+          type: number
+    USCL:
+      properties:
+        week:
+          type: string
+        totalA:
+          type: number
+        totalB:
+          type: number
+        percentPositiveA:
+          type: number
+        percentPositiveB:
+          type: number
+        totalTests:
+          type: number
+        percentPositive:
+          type: number
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API

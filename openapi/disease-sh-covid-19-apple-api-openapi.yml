@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'COVID-19: Apple'
+  description: (COVID-19 related mobility trend data from Apple, updated every 24 hours)
+paths:
+  /v3/covid-19/apple/countries:
+    get:
+      tags:
+      - 'COVID-19: Apple'
+      summary: Get a list of supported countries for Apple mobility data
+      description: Returns a list of supported country names
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidAppleCountries'
+  /v3/covid-19/apple/countries/{country}:
+    get:
+      tags:
+      - 'COVID-19: Apple'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A valid country name from the /v3/covid-19/apple/countries endpoint
+        type: string
+      summary: Get a list of supported subregions for specific country in the Apple mobility data set
+      description: Returns a list of supported subregions in a country where data is available
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidAppleSubregions'
+  /v3/covid-19/apple/countries/{country}/{subregions}:
+    get:
+      tags:
+      - 'COVID-19: Apple'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A valid country name from the /v3/covid-19/apple/countries endpoint
+        type: string
+      - name: subregions
+        in: path
+        required: true
+        description: Valid subregion(s) from the /v3/covid-19/apple/countries/{country} endpoint, separated by with commas
+        type: string
+      summary: Get COVID-19 Apple mobility data for subregions of a country
+      description: Returns a list of mobility data entries for subregion(s) every day since January 13th. Each entry has driving, transit, and walking data with an associated number of percentage change since January 13th
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidAppleData'
+components:
+  schemas:
+    covidAppleSubregions:
+      properties:
+        country:
+          type: string
+        subregions:
+          type: array
+          items:
+            type: string
+    covidAppleCountries:
+      type: array
+      items:
+        type: string
+    covidAppleData:
+      properties:
+        country:
+          type: string
+        subregion:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              sub-region:
+                type: string
+              subregion_and_city:
+                type: string
+              geo_type:
+                type: string
+              date:
+                type: string
+                format: date
+              driving:
+                type: number
+              transit:
+                type: number
+              walking:
+                type: number
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API

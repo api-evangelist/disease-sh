@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Government API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'COVID-19: Government'
+  description: (COVID-19 individual government reported data, updated every 24 hours)
+paths:
+  /v3/covid-19/gov/:
+    get:
+      tags:
+      - 'COVID-19: Government'
+      summary: Get a list of supported countries for government specific data
+      description: Returns a list of supported country names
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/covidGov'
+  /v3/covid-19/gov/{country}:
+    get:
+      tags:
+      - 'COVID-19: Government'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A valid country name from the /v3/covid-19/gov endpoint
+        type: string
+      - name: allowNull
+        in: query
+        enum:
+        - 'true'
+        - 'false'
+        - '1'
+        - '0'
+        description: By default, if a value is missing, it is returned as 0. This allows nulls to be returned
+        type: string
+      summary: Get COVID-19 government reported data for a specific country
+      responses:
+        '200':
+          description: Status Ok
+components:
+  schemas:
+    covidGov:
+      type: array
+      items:
+        type: string
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API

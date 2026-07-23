@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Therapeutics API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'COVID-19: Therapeutics'
+  description: (COVID-19 therapeutic trial data from raps.org, updated every 24 hours)
+paths:
+  /v3/covid-19/therapeutics:
+    get:
+      tags:
+      - 'COVID-19: Therapeutics'
+      summary: Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/therapeutics'
+components:
+  schemas:
+    therapeutic:
+      properties:
+        medicationClass:
+          type: string
+        tradeName:
+          type: array
+          items:
+            type: string
+        details:
+          type: string
+        developerResearcher:
+          type: array
+          items:
+            type: string
+        sponsors:
+          type: array
+          items:
+            type: string
+        trialPhase:
+          type: string
+        lastUpdate:
+          type: string
+    therapeutics:
+      properties:
+        source:
+          type: string
+        totalCandidates:
+          type: string
+        phases:
+          type: array
+          items:
+            $ref: '#/components/schemas/phases'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/therapeutic'
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
+          type: string
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API

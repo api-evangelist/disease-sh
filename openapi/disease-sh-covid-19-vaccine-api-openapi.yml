@@ -1,0 +1,353 @@
+openapi: 3.0.0
+info:
+  version: 3.0.0
+  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Vaccine API'
+  description: Third Party API for reliable global disease information
+  license:
+    name: GNU V3
+    url: https://github.com/disease-sh/API/blob/master/LICENSE
+host: disease.sh
+basePath: /
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: 'COVID-19: Vaccine'
+  description: (COVID-19 vaccine trial data from raps.org, updated every 24 hours)
+paths:
+  /v3/covid-19/vaccine:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      summary: Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccines'
+  /v3/covid-19/vaccine/coverage:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      parameters:
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      - name: fullData
+        in: query
+        default: 'false'
+        description: Flag indicating whether to return data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
+        type: string
+      summary: Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccineCoverage'
+              examples:
+                simpleTimeline:
+                  $ref: '#/components/examples/simpleVaccineTimeline'
+                fullTimeline:
+                  $ref: '#/components/examples/fullVaccineTimeline'
+  /v3/covid-19/vaccine/coverage/countries:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      parameters:
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      - name: fullData
+        in: query
+        default: 'false'
+        description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
+        type: string
+      summary: Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccineCountriesCoverage'
+              examples:
+                simpleTimeline:
+                  $ref: '#/components/examples/countriesSimpleVaccineTimeline'
+                fullTimeline:
+                  $ref: '#/components/examples/countriesFullVaccineTimeline'
+  /v3/covid-19/vaccine/coverage/countries/{country}:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      parameters:
+      - name: country
+        in: path
+        required: true
+        description: A valid country name, iso2, iso3
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      - name: fullData
+        in: query
+        default: 'false'
+        description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
+        type: string
+      summary: Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccineCountryCoverage'
+              examples:
+                simpleTimeline:
+                  $ref: '#/components/examples/countrySimpleVaccineTimeline'
+                fullTimeline:
+                  $ref: '#/components/examples/countryFullVaccineTimeline'
+  /v3/covid-19/vaccine/coverage/states:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      parameters:
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      - name: fullData
+        in: query
+        default: 'false'
+        description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
+        type: string
+      summary: Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccineStatesCoverage'
+              examples:
+                simpleTimeline:
+                  $ref: '#/components/examples/statesSimpleVaccineTimeline'
+                fullTimeline:
+                  $ref: '#/components/examples/statesFullVaccineTimeline'
+  /v3/covid-19/vaccine/coverage/states/{state}:
+    get:
+      tags:
+      - 'COVID-19: Vaccine'
+      parameters:
+      - name: state
+        in: path
+        required: true
+        description: A valid state name
+        type: string
+      - name: lastdays
+        in: query
+        default: 30
+        description: Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)
+        type: string
+      - name: fullData
+        in: query
+        default: 'false'
+        description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
+        type: string
+      summary: Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/
+      responses:
+        '200':
+          description: Status Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vaccineStateCoverage'
+              examples:
+                simpleTimeline:
+                  $ref: '#/components/examples/stateSimpleVaccineTimeline'
+                fullTimeline:
+                  $ref: '#/components/examples/stateFullVaccineTimeline'
+components:
+  examples:
+    stateFullVaccineTimeline:
+      value:
+        state: California
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    statesFullVaccineTimeline:
+      value:
+      - state: California
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    simpleVaccineTimeline:
+      value:
+        4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    fullVaccineTimeline:
+      value:
+      - total: 1000
+        daily: 1000
+        totalPerHundred: 1000
+        dailyPerMillion: 1000
+        date: 4/25/2021
+      summary: Full Vaccine Timeline
+    countriesSimpleVaccineTimeline:
+      value:
+      - country: USA
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    countriesFullVaccineTimeline:
+      value:
+      - country: USA
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    countrySimpleVaccineTimeline:
+      value:
+        country: USA
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    statesSimpleVaccineTimeline:
+      value:
+      - state: California
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    countryFullVaccineTimeline:
+      value:
+        country: USA
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    stateSimpleVaccineTimeline:
+      value:
+        state: California
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+  schemas:
+    vaccineCoverage:
+      oneOf:
+      - $ref: '#/components/schemas/simpleVaccineTimeline'
+      - $ref: '#/components/schemas/fullVaccineTimeline'
+    vaccineCountryCoverage:
+      type: object
+      properties:
+        country:
+          type: string
+        timeline:
+          oneOf:
+          - $ref: '#/components/schemas/simpleVaccineTimeline'
+          - $ref: '#/components/schemas/fullVaccineTimeline'
+    fullVaccineTimeline:
+      type: array
+      items:
+        type: object
+        properties:
+          total:
+            type: number
+          daily:
+            type: number
+          totalPerHundred:
+            type: number
+          dailyPerMillion:
+            type: number
+          date:
+            type: string
+    simpleVaccineTimeline:
+      type: object
+      properties:
+        date:
+          type: number
+    vaccines:
+      properties:
+        source:
+          type: string
+        totalCandidates:
+          type: string
+        phases:
+          type: array
+          items:
+            $ref: '#/components/schemas/phases'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vaccine'
+    vaccineStateCoverage:
+      type: object
+      properties:
+        state:
+          type: string
+        timeline:
+          oneOf:
+          - $ref: '#/components/schemas/simpleVaccineTimeline'
+          - $ref: '#/components/schemas/fullVaccineTimeline'
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
+          type: string
+    vaccine:
+      properties:
+        candidate:
+          type: string
+        mechanism:
+          type: string
+        sponsors:
+          type: array
+          items:
+            type: string
+        details:
+          type: string
+        trialPhase:
+          type: string
+        institutions:
+          type: array
+          items:
+            type: string
+    vaccineCountriesCoverage:
+      type: array
+      items:
+        $ref: '#/components/schemas/vaccineCountryCoverage'
+    vaccineStatesCoverage:
+      type: array
+      items:
+        $ref: '#/components/schemas/vaccineStateCoverage'
+externalDocs:
+  description: Find out more about this API
+  url: https://github.com/disease-sh/API
