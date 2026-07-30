@@ -7,7 +7,19 @@ description: >-
   data from the CDC, and mobility metrics from Apple and government sources.
   The API is completely free to use, requires no authentication, and supports
   CORS for browser-based integrations.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Free · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/disease-sh.png
 url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -23,38 +35,218 @@ tags:
   - Open Data
   - Public Health
 apis:
-  - name: disease.sh Open Disease API
-    description: >-
-      Third-party open API for reliable global disease information, offering
-      41 endpoints across COVID-19 statistics (Worldometers, JHUCSSE, NYT,
-      Apple, government sources), vaccine and therapeutic coverage, variant
-      data, and CDC influenza surveillance data. No authentication is required;
-      all responses are JSON.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://disease.sh
-    baseURL: https://disease.sh/v3
-    tags:
-      - COVID-19
-      - Influenza
-      - Disease Statistics
-      - Vaccine
-      - Health Data
-    properties:
-      - type: Documentation
-        url: https://disease.sh/docs/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/disease-sh/API/master/public/apidocs/swagger_v3.json
-      - type: GitHub
-        url: https://github.com/disease-sh/API
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
-    contact:
-      - FN: disease.sh Community
-        url: https://disease.sh
+- aid: disease-sh:disease-sh-covid-19-apple-api
+  name: 'disease.sh COVID-19: Apple API'
+  description: (COVID-19 related mobility trend data from Apple, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Apple'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-apple-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-government-api
+  name: 'disease.sh COVID-19: Government API'
+  description: (COVID-19 individual government reported data, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Government'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-government-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-jhucsse-api
+  name: 'disease.sh COVID-19: JHUCSSE API'
+  description: (COVID-19 data sourced from Johns Hopkins University, updated every 10 minutes)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: JHUCSSE'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-jhucsse-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-nyt-api
+  name: 'disease.sh COVID-19: NYT API'
+  description: (COVID-19 data sourced from the New York Times, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: NYT'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-nyt-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-therapeutics-api
+  name: 'disease.sh COVID-19: Therapeutics API'
+  description: (COVID-19 therapeutic trial data from raps.org, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Therapeutics'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-therapeutics-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-vaccine-api
+  name: 'disease.sh COVID-19: Vaccine API'
+  description: (COVID-19 vaccine trial data from raps.org, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Vaccine'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-vaccine-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-variants-api
+  name: 'disease.sh COVID-19: Variants API'
+  description: >-
+    (COVID-19 data from The European Surveillance System -TESSy, provided by [Austria, Belgium, Bulgaria,
+    Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland,
+    Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal,
+    Romania, Slovakia, Slovenia, Spain and Sweden]  https://www.ecdc.europa.eu and released by ECDC updated
+    every week)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Variants'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-variants-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-covid-19-worldometers-api
+  name: 'disease.sh COVID-19: Worldometers API'
+  description: (COVID-19 data sourced from Worldometers, updated every 10 minutes)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'COVID-19: Worldometers'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-covid-19-worldometers-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
+- aid: disease-sh:disease-sh-influenza-cdc-api
+  name: 'disease.sh Influenza: CDC API'
+  description: (Influenza data reported by the United States CDC, updated every 24 hours)
+  humanURL: https://disease.sh
+  baseURL: https://disease.sh/v3
+  tags:
+  - 'Influenza: CDC'
+  properties:
+  - type: OpenAPI
+    url: openapi/disease-sh-influenza-cdc-api-openapi.yml
+  - type: Documentation
+    url: https://disease.sh/docs/
+  - type: GitHub
+    url: https://github.com/disease-sh/API
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/disease-sh-agentic-access.yml
