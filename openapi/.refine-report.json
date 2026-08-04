@@ -1,0 +1,30 @@
+{
+  "provider": "disease-sh",
+  "sources": [
+    "disease-sh-covid-19-apple-api-openapi.yml",
+    "disease-sh-covid-19-government-api-openapi.yml",
+    "disease-sh-covid-19-jhucsse-api-openapi.yml",
+    "disease-sh-covid-19-nyt-api-openapi.yml",
+    "disease-sh-covid-19-therapeutics-api-openapi.yml",
+    "disease-sh-covid-19-vaccine-api-openapi.yml",
+    "disease-sh-covid-19-variants-api-openapi.yml",
+    "disease-sh-covid-19-worldometers-api-openapi.yml",
+    "disease-sh-influenza-cdc-api-openapi.yml"
+  ],
+  "outputs": [
+    "disease-sh-covid-19-apple-api-openapi.yml",
+    "disease-sh-covid-19-government-api-openapi.yml",
+    "disease-sh-covid-19-jhucsse-api-openapi.yml",
+    "disease-sh-covid-19-nyt-api-openapi.yml",
+    "disease-sh-covid-19-therapeutics-api-openapi.yml",
+    "disease-sh-covid-19-vaccine-api-openapi.yml",
+    "disease-sh-covid-19-variants-api-openapi.yml",
+    "disease-sh-covid-19-worldometers-api-openapi.yml",
+    "disease-sh-influenza-cdc-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
