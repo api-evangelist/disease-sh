@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: Apple",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of supported countries for Apple mobility data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/apple/countries"
+          },
+          "docs": "Returns a list of supported country names"
+        },
+        {
+          "info": {
+            "name": "Get a list of supported subregions for specific country in the Apple mobility data set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/apple/countries/:country",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A valid country name from the /v3/covid-19/apple/countries endpoint"
+              }
+            ]
+          },
+          "docs": "Returns a list of supported subregions in a country where data is available"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 Apple mobility data for subregions of a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/apple/countries/:country/:subregions",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A valid country name from the /v3/covid-19/apple/countries endpoint"
+              },
+              {
+                "name": "subregions",
+                "value": "",
+                "type": "path",
+                "description": "Valid subregion(s) from the /v3/covid-19/apple/countries/{country} endpoint, separated by with commas"
+              }
+            ]
+          },
+          "docs": "Returns a list of mobility data entries for subregion(s) every day since January 13th. Each entry has driving, transit, and walking data with an associated number of percentage change since January 13th"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

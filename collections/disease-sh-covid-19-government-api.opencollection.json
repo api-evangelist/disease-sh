@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Government API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: Government",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of supported countries for government specific data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/gov/"
+          },
+          "docs": "Returns a list of supported country names"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 government reported data for a specific country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/gov/:country",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A valid country name from the /v3/covid-19/gov endpoint"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 government reported data for a specific country"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

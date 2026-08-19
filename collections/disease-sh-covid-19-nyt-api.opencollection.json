@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: NYT API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: NYT",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for all states, with an entry for each day since the pandemic began",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/nyt/states",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for all states, with an entry for each day since the pandemic began"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a state or set of states, with an entry for each day since the pandemic began",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/nyt/states/:state",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "State name(s), separated by commas (e.g. 'Illinois, California')"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a state or set of states, with an entry for each day since the pandemic began"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for all available US counties, with an entry for each day since the pandemic began",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/nyt/counties",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for all available US counties, with an entry for each day since the pandemic began"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a county or set of counties, with an entry for each day since the pandemic began",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/nyt/counties/:county",
+            "params": [
+              {
+                "name": "county",
+                "value": "",
+                "type": "path",
+                "description": "County name(s), separated by commas (e.g. 'Alameda, Humboldt')"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a county or set of counties, with an entry for each day since the pandemic began"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for the entire USA, with an entry for each day since the pandemic began",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/nyt/usa"
+          },
+          "docs": "Get COVID-19 time series data for the entire USA, with an entry for each day since the pandemic began"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

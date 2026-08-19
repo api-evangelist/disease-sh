@@ -1,0 +1,103 @@
+{
+  "item": [
+    {
+      "id": "9795a1f1-0b67-475f-baaa-dbed93ab7980",
+      "name": "COVID-19: Therapeutics",
+      "description": {
+        "content": "(COVID-19 therapeutic trial data from raps.org, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e06d67a-7c82-4605-aa03-443b69a7eae5",
+          "name": "Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker",
+          "request": {
+            "name": "Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "therapeutics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae1c3854-8f73-4048-aa1c-e9dcb47e9c66",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "therapeutics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"source\": \"string\",\n  \"totalCandidates\": \"string\",\n  \"phases\": [\n    {\n      \"phase\": \"string\",\n      \"candidates\": \"string\"\n    },\n    {\n      \"phase\": \"string\",\n      \"candidates\": \"string\"\n    }\n  ],\n  \"data\": [\n    {\n      \"medicationClass\": \"string\",\n      \"tradeName\": [\n        \"string\",\n        \"string\"\n      ],\n      \"details\": \"string\",\n      \"developerResearcher\": [\n        \"string\",\n        \"string\"\n      ],\n      \"sponsors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"trialPhase\": \"string\",\n      \"lastUpdate\": \"string\"\n    },\n    {\n      \"medicationClass\": \"string\",\n      \"tradeName\": [\n        \"string\",\n        \"string\"\n      ],\n      \"details\": \"string\",\n      \"developerResearcher\": [\n        \"string\",\n        \"string\"\n      ],\n      \"sponsors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"trialPhase\": \"string\",\n      \"lastUpdate\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b15716fd-3088-46a6-8c69-0ec1ca30a058",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Therapeutics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

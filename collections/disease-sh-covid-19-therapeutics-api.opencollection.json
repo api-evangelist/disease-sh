@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Therapeutics API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: Therapeutics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/therapeutics"
+          },
+          "docs": "Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

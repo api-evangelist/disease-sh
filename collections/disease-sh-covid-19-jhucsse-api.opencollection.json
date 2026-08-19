@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: JHUCSSE API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: JHUCSSE",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get COVID-19 totals for all countries and their provinces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/jhucsse"
+          },
+          "docs": "Get COVID-19 totals for all countries and their provinces"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for all US counties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/jhucsse/counties"
+          },
+          "docs": "Get COVID-19 totals for all US counties"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for a specific county",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/jhucsse/counties/:county",
+            "params": [
+              {
+                "name": "county",
+                "value": "",
+                "type": "path",
+                "description": "Name of any county in the USA. All counties are listed in the /v3/covid-19/jhucsse/counties/ endpoint"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for a specific county"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for all countries and their provinces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for all countries and their provinces"
+        },
+        {
+          "info": {
+            "name": "Get global accumulated COVID-19 time series data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/all",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get global accumulated COVID-19 time series data"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a specific country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/:country",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A country name, iso2, iso3, or country ID code"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a specific country"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a specific set of countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/:countries",
+            "params": [
+              {
+                "name": "countries",
+                "value": "",
+                "type": "path",
+                "description": "Multiple country names, iso2, iso3, or country IDs separated by commas"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a specific set of countries"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a specific province in a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/:country/:province",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A country name, iso2, iso3, or country ID code"
+              },
+              {
+                "name": "province",
+                "value": "",
+                "type": "path",
+                "description": "Province name. All available names can be found in the /v3/covid-19/historical/{query} endpoint"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a specific province in a country"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for a set of provinces in a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/:country/:provinces",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A country name, iso2, iso3, or country ID code"
+              },
+              {
+                "name": "provinces",
+                "value": "",
+                "type": "path",
+                "description": "Provinces spelled correctly separated by ',' or '|' delimiters, never both in the same query"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for a set of provinces in a country"
+        },
+        {
+          "info": {
+            "name": "Get all possible US States to query the /historical/usacounties/{state} endpoint with",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/usacounties"
+          },
+          "docs": "Returns a list of US States and provinces"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 time series data for all counties in a specified US state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/historical/usacounties/:state",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "US state name, validated in the array returned from the /v3/covid-19/historical/usacounties endpoint"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 time series data for all counties in a specified US state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

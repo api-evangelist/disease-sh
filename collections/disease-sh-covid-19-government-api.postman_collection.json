@@ -1,0 +1,199 @@
+{
+  "item": [
+    {
+      "id": "4b3cfb85-16b4-4390-a66d-accff1b5b099",
+      "name": "COVID-19: Government",
+      "description": {
+        "content": "(COVID-19 individual government reported data, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c870d40d-d3dd-4638-a2d8-731fe3ca05d6",
+          "name": "Get a list of supported countries for government specific data",
+          "request": {
+            "name": "Get a list of supported countries for government specific data",
+            "description": {
+              "content": "Returns a list of supported country names",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "gov",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "179972f3-a75c-4fe7-9606-5c086c88cb7d",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "gov",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a912b019-6d12-4845-b921-2f5de293f357",
+          "name": "Get COVID-19 government reported data for a specific country",
+          "request": {
+            "name": "Get COVID-19 government reported data for a specific country",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "gov",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A valid country name from the /v3/covid-19/gov endpoint"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bfafe3df-e229-40a1-bafe-65de9fb342c5",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "gov",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A valid country name from the /v3/covid-19/gov endpoint"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bb726426-2245-4804-a90e-7249754a2b54",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Government API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

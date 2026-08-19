@@ -1,0 +1,308 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Worldometers API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: Worldometers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get global COVID-19 totals for today, yesterday and two days ago",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/all",
+            "params": [
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get global COVID-19 totals for today, yesterday and two days ago"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for all US States",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/states",
+            "params": [
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Provided a key (e.g. cases, todayCases, deaths, active), result will be sorted from greatest to least"
+              },
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for all US States"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for specific US State(s)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/states/:states",
+            "params": [
+              {
+                "name": "states",
+                "value": "",
+                "type": "path",
+                "description": "State name or comma separated names spelled correctly"
+              },
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for specific US State(s)"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for all continents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/continents",
+            "params": [
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Provided a key (e.g. cases, todayCases, deaths, recovered, active), results will be sorted from greatest to least"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for all continents"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for a specific continent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/continents/:continent",
+            "params": [
+              {
+                "name": "continent",
+                "value": "",
+                "type": "path",
+                "description": "Continent name"
+              },
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "strict",
+                "value": "",
+                "type": "query",
+                "description": "Setting to false gives you the ability to fuzzy search continents (i.e. Oman vs. rOMANia)"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for a specific continent"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for all countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/countries",
+            "params": [
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Provided a key (e.g. cases, todayCases, deaths, recovered, active), the result will be sorted from greatest to least"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for all countries"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for a specific country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/countries/:country",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A country name, iso2, iso3, or country ID code"
+              },
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "strict",
+                "value": "",
+                "type": "query",
+                "description": "Setting to false gives you the ability to fuzzy search countries (i.e. Oman vs. rOMANia)"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for a specific country"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 totals for a specific set of countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/countries/:countries",
+            "params": [
+              {
+                "name": "countries",
+                "value": "",
+                "type": "path",
+                "description": "Multiple country names, iso2, iso3, or country IDs separated by commas"
+              },
+              {
+                "name": "yesterday",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported a day ago"
+              },
+              {
+                "name": "twoDaysAgo",
+                "value": "",
+                "type": "query",
+                "description": "Queries data reported two days ago"
+              },
+              {
+                "name": "allowNull",
+                "value": "",
+                "type": "query",
+                "description": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned"
+              }
+            ]
+          },
+          "docs": "Get COVID-19 totals for a specific set of countries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

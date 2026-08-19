@@ -1,0 +1,312 @@
+{
+  "item": [
+    {
+      "id": "c17dc63a-f1be-4498-b1d2-61dc23abea28",
+      "name": "COVID-19: Apple",
+      "description": {
+        "content": "(COVID-19 related mobility trend data from Apple, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4fbabe51-14d1-4345-b264-6bb2b5c892c7",
+          "name": "Get a list of supported countries for Apple mobility data",
+          "request": {
+            "name": "Get a list of supported countries for Apple mobility data",
+            "description": {
+              "content": "Returns a list of supported country names",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "apple",
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1024ac73-e9df-49a7-8e8e-2952ba3058fb",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "apple",
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2753d43d-6e5a-465a-a8dc-f4a7caed880d",
+          "name": "Get a list of supported subregions for specific country in the Apple mobility data set",
+          "request": {
+            "name": "Get a list of supported subregions for specific country in the Apple mobility data set",
+            "description": {
+              "content": "Returns a list of supported subregions in a country where data is available",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "apple",
+                "countries",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A valid country name from the /v3/covid-19/apple/countries endpoint"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a40c6d0a-e92f-45d4-b5dc-1c9fd7e332af",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "apple",
+                    "countries",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A valid country name from the /v3/covid-19/apple/countries endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"string\",\n  \"subregions\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c787a77-e1f3-41f7-b411-7835d33d14d4",
+          "name": "Get COVID-19 Apple mobility data for subregions of a country",
+          "request": {
+            "name": "Get COVID-19 Apple mobility data for subregions of a country",
+            "description": {
+              "content": "Returns a list of mobility data entries for subregion(s) every day since January 13th. Each entry has driving, transit, and walking data with an associated number of percentage change since January 13th",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "apple",
+                "countries",
+                ":country",
+                ":subregions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A valid country name from the /v3/covid-19/apple/countries endpoint"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "subregions",
+                  "description": "(Required) Valid subregion(s) from the /v3/covid-19/apple/countries/{country} endpoint, separated by with commas"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01f5a1ed-e8c4-4785-a2d1-5a6b0678f786",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "apple",
+                    "countries",
+                    ":country",
+                    ":subregions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A valid country name from the /v3/covid-19/apple/countries endpoint"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "subregions",
+                      "description": "(Required) Valid subregion(s) from the /v3/covid-19/apple/countries/{country} endpoint, separated by with commas"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"string\",\n  \"subregion\": \"string\",\n  \"data\": [\n    {\n      \"sub-region\": \"string\",\n      \"subregion_and_city\": \"string\",\n      \"geo_type\": \"string\",\n      \"date\": \"2008-04-23\",\n      \"driving\": 4418.851207499721,\n      \"transit\": 6559.672657164152,\n      \"walking\": 672.9515815316345\n    },\n    {\n      \"sub-region\": \"string\",\n      \"subregion_and_city\": \"string\",\n      \"geo_type\": \"string\",\n      \"date\": \"1954-09-03\",\n      \"driving\": 7126.785734800326,\n      \"transit\": 6517.188017640643,\n      \"walking\": 9808.89407059219\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "13dd034b-8b69-46f3-a1b5-6ddd8dbfa1da",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

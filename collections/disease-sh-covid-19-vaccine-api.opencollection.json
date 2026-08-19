@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Vaccine API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COVID-19: Vaccine",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine"
+          },
+          "docs": "Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker"
+        },
+        {
+          "info": {
+            "name": "Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine/coverage",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              },
+              {
+                "name": "fullData",
+                "value": "",
+                "type": "query",
+                "description": "Flag indicating whether to return data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true)."
+              }
+            ]
+          },
+          "docs": "Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine/coverage/countries",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              },
+              {
+                "name": "fullData",
+                "value": "",
+                "type": "query",
+                "description": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true)."
+              }
+            ]
+          },
+          "docs": "Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine/coverage/countries/:country",
+            "params": [
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "A valid country name, iso2, iso3"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              },
+              {
+                "name": "fullData",
+                "value": "",
+                "type": "query",
+                "description": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true)."
+              }
+            ]
+          },
+          "docs": "Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine/coverage/states",
+            "params": [
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              },
+              {
+                "name": "fullData",
+                "value": "",
+                "type": "query",
+                "description": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true)."
+              }
+            ]
+          },
+          "docs": "Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/"
+        },
+        {
+          "info": {
+            "name": "Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/covid-19/vaccine/coverage/states/:state",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "A valid state name"
+              },
+              {
+                "name": "lastdays",
+                "value": "",
+                "type": "query",
+                "description": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)"
+              },
+              {
+                "name": "fullData",
+                "value": "",
+                "type": "query",
+                "description": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true)."
+              }
+            ]
+          },
+          "docs": "Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

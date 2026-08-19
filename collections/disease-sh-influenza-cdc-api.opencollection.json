@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple Influenza: CDC API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Influenza: CDC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/influenza/cdc/ILINet"
+          },
+          "docs": "Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control"
+        },
+        {
+          "info": {
+            "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/influenza/cdc/USCL"
+          },
+          "docs": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs"
+        },
+        {
+          "info": {
+            "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/influenza/cdc/USPHL"
+          },
+          "docs": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

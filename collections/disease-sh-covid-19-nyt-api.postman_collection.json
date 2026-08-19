@@ -1,0 +1,489 @@
+{
+  "item": [
+    {
+      "id": "e9713422-aa8b-4f99-9450-e095261443d3",
+      "name": "COVID-19: NYT",
+      "description": {
+        "content": "(COVID-19 data sourced from the New York Times, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b641c88f-aa44-497e-8361-3cb25a3a3773",
+          "name": "Get COVID-19 time series data for all states, with an entry for each day since the pandemic began",
+          "request": {
+            "name": "Get COVID-19 time series data for all states, with an entry for each day since the pandemic began",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "nyt",
+                "states"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4e32908-8295-44e1-b6a6-687bdd6e7c07",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "nyt",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2004-01-06\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 3820.1798091063333,\n    \"deaths\": 9246.061706032906\n  },\n  {\n    \"date\": \"2001-01-10\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 9174.923220170098,\n    \"deaths\": 7901.684016107828\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83bf48d9-5a7e-408a-9457-7bd9912c6588",
+          "name": "Get COVID-19 time series data for a state or set of states, with an entry for each day since the pandemic began",
+          "request": {
+            "name": "Get COVID-19 time series data for a state or set of states, with an entry for each day since the pandemic began",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "nyt",
+                "states",
+                ":state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "state",
+                  "description": "(Required) State name(s), separated by commas (e.g. 'Illinois, California')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e8deef2-ecf7-4dda-894b-d0383b007c6c",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "nyt",
+                    "states",
+                    ":state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "state",
+                      "description": "(Required) State name(s), separated by commas (e.g. 'Illinois, California')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"1981-03-02\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 1515.4783499811842,\n    \"deaths\": 5679.941434920465\n  },\n  {\n    \"date\": \"1983-12-19\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 6712.159409191118,\n    \"deaths\": 8778.53188607505\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b7226b0-399a-428c-bc71-3944ca3f480f",
+          "name": "Get COVID-19 time series data for all available US counties, with an entry for each day since the pandemic began",
+          "request": {
+            "name": "Get COVID-19 time series data for all available US counties, with an entry for each day since the pandemic began",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "nyt",
+                "counties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9db52718-7871-4162-85e2-610c0846d693",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "nyt",
+                    "counties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"1977-08-21\",\n    \"county\": \"string\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 2998.378121492039,\n    \"deaths\": 8272.109394745983\n  },\n  {\n    \"date\": \"1955-02-13\",\n    \"county\": \"string\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 8644.966111218851,\n    \"deaths\": 9504.09182342482\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03d4b51b-957f-49c0-936f-df0e6f42b5f9",
+          "name": "Get COVID-19 time series data for a county or set of counties, with an entry for each day since the pandemic began",
+          "request": {
+            "name": "Get COVID-19 time series data for a county or set of counties, with an entry for each day since the pandemic began",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "nyt",
+                "counties",
+                ":county"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "county",
+                  "description": "(Required) County name(s), separated by commas (e.g. 'Alameda, Humboldt')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6f00dad-2e48-4e6c-8441-3cdfdb9faa0c",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "nyt",
+                    "counties",
+                    ":county"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "county",
+                      "description": "(Required) County name(s), separated by commas (e.g. 'Alameda, Humboldt')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"1956-06-20\",\n    \"county\": \"string\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 5658.7457345181,\n    \"deaths\": 6392.352635190803\n  },\n  {\n    \"date\": \"1965-07-26\",\n    \"county\": \"string\",\n    \"state\": \"string\",\n    \"fips\": \"string\",\n    \"cases\": 825.9802101505553,\n    \"deaths\": 1459.3913052376595\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3efe2864-2b1c-4f5e-b653-8e9914567fc1",
+          "name": "Get COVID-19 time series data for the entire USA, with an entry for each day since the pandemic began",
+          "request": {
+            "name": "Get COVID-19 time series data for the entire USA, with an entry for each day since the pandemic began",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "nyt",
+                "usa"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dec4d93-60e1-4696-9079-958cee2f3178",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "nyt",
+                    "usa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2007-02-21\",\n    \"cases\": 4736.845849330988,\n    \"deaths\": 7955.405937380444\n  },\n  {\n    \"date\": \"1973-05-04\",\n    \"cases\": 7494.924506459019,\n    \"deaths\": 3160.7115485261215\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9edf3deb-beaf-4d60-9a27-23c07e9c190f",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: NYT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

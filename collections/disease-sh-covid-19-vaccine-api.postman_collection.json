@@ -1,0 +1,642 @@
+{
+  "item": [
+    {
+      "id": "3d21124f-075b-4431-ab7d-a654c8a2d2e3",
+      "name": "COVID-19: Vaccine",
+      "description": {
+        "content": "(COVID-19 vaccine trial data from raps.org, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be3cb9a2-d1e4-4ba1-a9cc-8b425f413a6d",
+          "name": "Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker",
+          "request": {
+            "name": "Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c181c628-0ef4-4334-a41f-e6011baf3446",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"source\": \"string\",\n  \"totalCandidates\": \"string\",\n  \"phases\": [\n    {\n      \"phase\": \"string\",\n      \"candidates\": \"string\"\n    },\n    {\n      \"phase\": \"string\",\n      \"candidates\": \"string\"\n    }\n  ],\n  \"data\": [\n    {\n      \"candidate\": \"string\",\n      \"mechanism\": \"string\",\n      \"sponsors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"details\": \"string\",\n      \"trialPhase\": \"string\",\n      \"institutions\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"candidate\": \"string\",\n      \"mechanism\": \"string\",\n      \"sponsors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"details\": \"string\",\n      \"trialPhase\": \"string\",\n      \"institutions\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8739778-f73f-452e-8d70-eb06a39daf9f",
+          "name": "Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/",
+          "request": {
+            "name": "Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine",
+                "coverage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Flag indicating whether to return data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).",
+                    "type": "text/plain"
+                  },
+                  "key": "fullData",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7205c78f-be0b-481d-ac82-16f7063d3554",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine",
+                    "coverage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    },
+                    {
+                      "key": "fullData",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"4/25/2021\": 1000\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "023d2345-d237-407f-89a7-a4b5e73eff91",
+          "name": "Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+          "request": {
+            "name": "Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine",
+                "coverage",
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).",
+                    "type": "text/plain"
+                  },
+                  "key": "fullData",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8ad2158-77e3-405c-a743-b334aa5d3cb5",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine",
+                    "coverage",
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    },
+                    {
+                      "key": "fullData",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"USA\",\n    \"timeline\": {\n      \"4/25/2021\": 1000\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d9247d7-fe8c-42c5-80d7-fad432e7a9d4",
+          "name": "Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+          "request": {
+            "name": "Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine",
+                "coverage",
+                "countries",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).",
+                    "type": "text/plain"
+                  },
+                  "key": "fullData",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A valid country name, iso2, iso3"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5646e979-e008-4cc3-b094-970409312809",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine",
+                    "coverage",
+                    "countries",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    },
+                    {
+                      "key": "fullData",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A valid country name, iso2, iso3"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"USA\",\n  \"timeline\": {\n    \"4/25/2021\": 1000\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3a5d1af-884d-4070-9df6-86bf6fd2cca3",
+          "name": "Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+          "request": {
+            "name": "Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine",
+                "coverage",
+                "states"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).",
+                    "type": "text/plain"
+                  },
+                  "key": "fullData",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b830889-f6ea-4826-9552-997af38abdcb",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine",
+                    "coverage",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    },
+                    {
+                      "key": "fullData",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"state\": \"California\",\n    \"timeline\": {\n      \"4/25/2021\": 1000\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d154667-cab0-4f54-83a5-39be1e460866",
+          "name": "Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+          "request": {
+            "name": "Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "vaccine",
+                "coverage",
+                "states",
+                ":state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).",
+                    "type": "text/plain"
+                  },
+                  "key": "fullData",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "state",
+                  "description": "(Required) A valid state name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "62ef714c-e092-4c35-8246-7fda5d1f864b",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "vaccine",
+                    "coverage",
+                    "states",
+                    ":state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    },
+                    {
+                      "key": "fullData",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "state",
+                      "description": "(Required) A valid state name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"state\": \"California\",\n  \"timeline\": {\n    \"4/25/2021\": 1000\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "66c3b377-14fe-4708-881b-10519ed11531",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Vaccine API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

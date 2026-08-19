@@ -1,0 +1,1012 @@
+{
+  "item": [
+    {
+      "id": "7a97bf55-c9cd-420e-950a-aa00428f8d34",
+      "name": "COVID-19: Worldometers",
+      "description": {
+        "content": "(COVID-19 data sourced from Worldometers, updated every 10 minutes)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "55f8a51c-44f2-4759-9708-224834ab7113",
+          "name": "Get global COVID-19 totals for today, yesterday and two days ago",
+          "request": {
+            "name": "Get global COVID-19 totals for today, yesterday and two days ago",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f2a4be9-e415-4894-b284-effc275a01d6",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 4096.85922613771,\n  \"cases\": 6269.891568251903,\n  \"todayCases\": 3311.529035256198,\n  \"deaths\": 1951.9758489728433,\n  \"recovered\": 9931.319705742086,\n  \"todayRecovered\": 8245.013078277843,\n  \"active\": 3742.715113040316,\n  \"critical\": 6697.5215847263025,\n  \"casesPerOneMillion\": 6527.850178035005,\n  \"deathsPerOneMillion\": 4025.853205717103,\n  \"tests\": 5774.4099919175615,\n  \"testsPerOneMillion\": 2077.8738578389934,\n  \"population\": 8314.400288020475,\n  \"oneCasePerPeople\": 8848.54251873074,\n  \"oneDeathPerPeople\": 9260.652127956455,\n  \"oneTestPerPeople\": 9232.356439039902,\n  \"activePerOneMillion\": 9684.277607459257,\n  \"recoveredPerOneMillion\": 99.80874993413602,\n  \"criticalPerOneMillion\": 9411.435622275909,\n  \"affectedCountries\": 9778.343400509957\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff255eb3-9f7a-47b8-b641-aec8c00bfa44",
+          "name": "Get COVID-19 totals for all US States",
+          "request": {
+            "name": "Get COVID-19 totals for all US States",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "states"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Provided a key (e.g. cases, todayCases, deaths, active), result will be sorted from greatest to least (This can only be one of cases,todayCases,deaths,todayDeaths,active)",
+                    "type": "text/plain"
+                  },
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0cb1dae-a00b-4206-be4b-2b7d7a48538d",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"state\": \"string\",\n    \"updated\": 6889.546720823971,\n    \"cases\": 1658.4271550858332,\n    \"todayCases\": 4953.035900297112,\n    \"deaths\": 5032.407695961326,\n    \"todayDeaths\": 3343.580447275183,\n    \"active\": 8425.276185773087,\n    \"casesPerOneMillion\": 6722.421884492594,\n    \"deathsPerOneMillion\": 5726.631605684971,\n    \"tests\": 4297.968784389321,\n    \"testsPerOneMillion\": 9711.295901219546,\n    \"population\": 1158.2142636032888\n  },\n  {\n    \"state\": \"string\",\n    \"updated\": 3969.4512167925755,\n    \"cases\": 6260.408502269431,\n    \"todayCases\": 2920.276333445172,\n    \"deaths\": 6311.326253180178,\n    \"todayDeaths\": 960.4367534925395,\n    \"active\": 4129.241733034972,\n    \"casesPerOneMillion\": 1364.9011765845264,\n    \"deathsPerOneMillion\": 2331.6414538751883,\n    \"tests\": 3946.4063880661447,\n    \"testsPerOneMillion\": 5036.143769808946,\n    \"population\": 9059.959362447838\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90aab685-bc5b-4ff6-bb64-3c8fd6ea5b2a",
+          "name": "Get COVID-19 totals for specific US State(s)",
+          "request": {
+            "name": "Get COVID-19 totals for specific US State(s)",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "states",
+                ":states"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "states",
+                  "description": "(Required) State name or comma separated names spelled correctly"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e71cb593-b168-493b-a49b-8e4829fe7e57",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "states",
+                    ":states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "states",
+                      "description": "(Required) State name or comma separated names spelled correctly"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"state\": \"string\",\n  \"updated\": 8866.28083480283,\n  \"cases\": 3890.4923517858915,\n  \"todayCases\": 5993.126356619741,\n  \"deaths\": 6259.466372995531,\n  \"todayDeaths\": 3664.796470284748,\n  \"active\": 8253.078481580465,\n  \"casesPerOneMillion\": 9070.03592430167,\n  \"deathsPerOneMillion\": 4114.459351135683,\n  \"tests\": 4831.071826218034,\n  \"testsPerOneMillion\": 2781.0584465113575,\n  \"population\": 3966.672990261152\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9335b1d-e1be-4d6b-963e-6ea62688b97a",
+          "name": "Get COVID-19 totals for all continents",
+          "request": {
+            "name": "Get COVID-19 totals for all continents",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "continents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Provided a key (e.g. cases, todayCases, deaths, recovered, active), results will be sorted from greatest to least (This can only be one of cases,todayCases,deaths,todayDeaths,recovered,active,critical,casesPerOneMillion,deathsPerOneMillion)",
+                    "type": "text/plain"
+                  },
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c18ac6df-aad4-40da-885c-c65ff072a397",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "continents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"updated\": 5465.377954826338,\n    \"cases\": 6770.76183722931,\n    \"todayCases\": 9850.137179349447,\n    \"deaths\": 4214.2034402489135,\n    \"todayDeaths\": 3441.649363324174,\n    \"recovered\": 5303.537272860134,\n    \"todayRecovered\": 3664.298398013932,\n    \"active\": 7946.270010050317,\n    \"critical\": 8597.621363554335,\n    \"casesPerOneMillion\": 7534.125956945649,\n    \"deathsPerOneMillion\": 761.4410819047667,\n    \"tests\": 7686.876580948795,\n    \"testsPerOneMillion\": 3350.098189098656,\n    \"population\": 963.974121704928,\n    \"continent\": \"string\",\n    \"activePerOneMillion\": 9310.864310335508,\n    \"recoveredPerOneMillion\": 8202.03203631362,\n    \"criticalPerOneMillion\": 4916.661560668228,\n    \"continentInfo\": {\n      \"lat\": 8219.776910540799,\n      \"long\": 2731.3967480493016\n    },\n    \"countries\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"updated\": 3067.7191027032245,\n    \"cases\": 6960.441931551367,\n    \"todayCases\": 7800.694591771735,\n    \"deaths\": 3896.2632483962025,\n    \"todayDeaths\": 7839.067681190352,\n    \"recovered\": 656.8279454804382,\n    \"todayRecovered\": 7083.599313729725,\n    \"active\": 5413.7846108372005,\n    \"critical\": 3204.7935785199056,\n    \"casesPerOneMillion\": 6140.010243239819,\n    \"deathsPerOneMillion\": 3000.4841753540977,\n    \"tests\": 2884.906266905343,\n    \"testsPerOneMillion\": 5407.904644246294,\n    \"population\": 9579.520487810725,\n    \"continent\": \"string\",\n    \"activePerOneMillion\": 5020.037265079561,\n    \"recoveredPerOneMillion\": 3590.9973421616605,\n    \"criticalPerOneMillion\": 3815.1743573292374,\n    \"continentInfo\": {\n      \"lat\": 5402.091433184853,\n      \"long\": 6301.498344469347\n    },\n    \"countries\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3f493d1-48b1-4f00-88c8-31420bda1b3e",
+          "name": "Get COVID-19 totals for a specific continent",
+          "request": {
+            "name": "Get COVID-19 totals for a specific continent",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "continents",
+                ":continent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Setting to false gives you the ability to fuzzy search continents (i.e. Oman vs. rOMANia) (This can only be one of true,false)",
+                    "type": "text/plain"
+                  },
+                  "key": "strict",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "continent",
+                  "description": "(Required) Continent name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "026494fd-527f-4928-85f9-9a1dbc3536e5",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "continents",
+                    ":continent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "strict",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "continent",
+                      "description": "(Required) Continent name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 858.6588521203154,\n  \"cases\": 6117.007301537649,\n  \"todayCases\": 7917.781032265836,\n  \"deaths\": 8311.334682726922,\n  \"todayDeaths\": 4974.542291605816,\n  \"recovered\": 2212.690707441204,\n  \"todayRecovered\": 3088.8088133432666,\n  \"active\": 454.3981561453969,\n  \"critical\": 4296.088599927138,\n  \"casesPerOneMillion\": 2997.127478995243,\n  \"deathsPerOneMillion\": 9314.037752519936,\n  \"tests\": 4951.36201977079,\n  \"testsPerOneMillion\": 1848.143404087793,\n  \"population\": 5936.450385218386,\n  \"continent\": \"string\",\n  \"activePerOneMillion\": 1055.2174084795352,\n  \"recoveredPerOneMillion\": 3400.8643584605734,\n  \"criticalPerOneMillion\": 9464.809492978839,\n  \"continentInfo\": {\n    \"lat\": 7077.096685569195,\n    \"long\": 123.15356154265933\n  },\n  \"countries\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12483e34-213c-4d56-9eae-bbd452f6968b",
+          "name": "Get COVID-19 totals for all countries",
+          "request": {
+            "name": "Get COVID-19 totals for all countries",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Provided a key (e.g. cases, todayCases, deaths, recovered, active), the result will be sorted from greatest to least (This can only be one of cases,todayCases,deaths,todayDeaths,recovered,active,critical,casesPerOneMillion,deathsPerOneMillion)",
+                    "type": "text/plain"
+                  },
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c88cc423-3dc5-4944-ae1a-9fd62c35379f",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"updated\": 9627.588913314958,\n    \"country\": \"string\",\n    \"countryInfo\": {\n      \"_id\": 6687.473581411795,\n      \"iso2\": \"string\",\n      \"iso3\": \"string\",\n      \"lat\": 8946.463354517278,\n      \"long\": 2838.6048832286015,\n      \"flag\": \"string\"\n    },\n    \"cases\": 4305.122102360943,\n    \"todayCases\": 9782.671990008383,\n    \"deaths\": 7976.095115933456,\n    \"todayDeaths\": 1870.600970334665,\n    \"recovered\": 9471.585372538158,\n    \"todayRecovered\": 6147.068477997663,\n    \"active\": 539.1480624017508,\n    \"critical\": 3780.6768081495456,\n    \"casesPerOneMillion\": 624.5439756261806,\n    \"deathsPerOneMillion\": 3013.592357282253,\n    \"tests\": 3401.569252124612,\n    \"testsPerOneMillion\": 3009.1128409574044,\n    \"population\": 6123.700552205609,\n    \"continent\": 2497.166447114663,\n    \"oneCasePerPeople\": 6034.068664902764,\n    \"oneDeathPerPeople\": 7731.9693591860805,\n    \"oneTestPerPeople\": 2140.0049401081387,\n    \"activePerOneMillion\": 885.7177281328377,\n    \"recoveredPerOneMillion\": 1855.938711996009,\n    \"criticalPerOneMillion\": 5363.438069283173\n  },\n  {\n    \"updated\": 3454.433644756133,\n    \"country\": \"string\",\n    \"countryInfo\": {\n      \"_id\": 5268.464036383686,\n      \"iso2\": \"string\",\n      \"iso3\": \"string\",\n      \"lat\": 3770.469101893248,\n      \"long\": 847.0132989532153,\n      \"flag\": \"string\"\n    },\n    \"cases\": 3057.5127675726844,\n    \"todayCases\": 1356.2532658186199,\n    \"deaths\": 496.01286375825504,\n    \"todayDeaths\": 1070.452065638291,\n    \"recovered\": 50.35052764655767,\n    \"todayRecovered\": 7537.745463005321,\n    \"active\": 983.783548774484,\n    \"critical\": 800.4546713308391,\n    \"casesPerOneMillion\": 8492.40618170888,\n    \"deathsPerOneMillion\": 696.9065235666538,\n    \"tests\": 5148.909297083815,\n    \"testsPerOneMillion\": 5130.531626337606,\n    \"population\": 2491.3880663539458,\n    \"continent\": 3501.5949842754226,\n    \"oneCasePerPeople\": 3680.858927841554,\n    \"oneDeathPerPeople\": 652.6955300673387,\n    \"oneTestPerPeople\": 1142.4185578625168,\n    \"activePerOneMillion\": 213.643925829482,\n    \"recoveredPerOneMillion\": 6967.861868554441,\n    \"criticalPerOneMillion\": 3059.95568722926\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61da02a8-c3c2-4262-bc1c-4205a8425570",
+          "name": "Get COVID-19 totals for a specific country",
+          "request": {
+            "name": "Get COVID-19 totals for a specific country",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "countries",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Setting to false gives you the ability to fuzzy search countries (i.e. Oman vs. rOMANia) (This can only be one of true,false)",
+                    "type": "text/plain"
+                  },
+                  "key": "strict",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A country name, iso2, iso3, or country ID code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd43a80c-2631-4ba0-ab68-5fba727d6eaf",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "countries",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "strict",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A country name, iso2, iso3, or country ID code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 2651.9369435111385,\n  \"country\": \"string\",\n  \"countryInfo\": {\n    \"_id\": 1423.894460015731,\n    \"iso2\": \"string\",\n    \"iso3\": \"string\",\n    \"lat\": 4217.896558009493,\n    \"long\": 3935.857069527272,\n    \"flag\": \"string\"\n  },\n  \"cases\": 9418.907910822756,\n  \"todayCases\": 6629.925692932299,\n  \"deaths\": 9502.480836782775,\n  \"todayDeaths\": 9906.75254616146,\n  \"recovered\": 131.03617673918987,\n  \"todayRecovered\": 1520.658581268971,\n  \"active\": 2831.2194990199723,\n  \"critical\": 3510.988042140247,\n  \"casesPerOneMillion\": 1422.396940581534,\n  \"deathsPerOneMillion\": 9887.481887665654,\n  \"tests\": 5645.372760822232,\n  \"testsPerOneMillion\": 4562.557623126947,\n  \"population\": 5533.491389512192,\n  \"continent\": 4431.826530399941,\n  \"oneCasePerPeople\": 3054.7546949726366,\n  \"oneDeathPerPeople\": 9364.557544881627,\n  \"oneTestPerPeople\": 7821.24004741246,\n  \"activePerOneMillion\": 4578.067922277577,\n  \"recoveredPerOneMillion\": 4763.1631335866805,\n  \"criticalPerOneMillion\": 2448.23129372309\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b9c77ca-54b0-42ae-b565-6ba9bc161e16",
+          "name": "Get COVID-19 totals for a specific set of countries",
+          "request": {
+            "name": "Get COVID-19 totals for a specific set of countries",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "countries",
+                ":countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Queries data reported a day ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "yesterday",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Queries data reported two days ago (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "twoDaysAgo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "By default, if a value is missing, it is returned as 0. This allows nulls to be returned (This can only be one of true,false,1,0)",
+                    "type": "text/plain"
+                  },
+                  "key": "allowNull",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "countries",
+                  "description": "(Required) Multiple country names, iso2, iso3, or country IDs separated by commas"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b492286-0995-4762-8bfe-bd7d559bd335",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "countries",
+                    ":countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "yesterday",
+                      "value": ""
+                    },
+                    {
+                      "key": "twoDaysAgo",
+                      "value": ""
+                    },
+                    {
+                      "key": "allowNull",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "countries",
+                      "description": "(Required) Multiple country names, iso2, iso3, or country IDs separated by commas"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"updated\": 9433.747082013122,\n    \"country\": \"string\",\n    \"countryInfo\": {\n      \"_id\": 3577.0601405196144,\n      \"iso2\": \"string\",\n      \"iso3\": \"string\",\n      \"lat\": 3187.0786733866407,\n      \"long\": 2448.044306044168,\n      \"flag\": \"string\"\n    },\n    \"cases\": 2219.6803467039085,\n    \"todayCases\": 2560.072944794918,\n    \"deaths\": 8690.36187445768,\n    \"todayDeaths\": 8973.631170037364,\n    \"recovered\": 4871.1607123874555,\n    \"todayRecovered\": 5701.41805086489,\n    \"active\": 3301.9486394168784,\n    \"critical\": 9711.473845295603,\n    \"casesPerOneMillion\": 5736.072366765341,\n    \"deathsPerOneMillion\": 2918.5219217241442,\n    \"tests\": 9019.559915776279,\n    \"testsPerOneMillion\": 9979.430712012243,\n    \"population\": 9862.118035252879,\n    \"continent\": 1657.4172656166686,\n    \"oneCasePerPeople\": 2302.0545830462456,\n    \"oneDeathPerPeople\": 2475.2786730646126,\n    \"oneTestPerPeople\": 5303.948817488981,\n    \"activePerOneMillion\": 1911.1875014231016,\n    \"recoveredPerOneMillion\": 2982.912848195114,\n    \"criticalPerOneMillion\": 8210.644776987658\n  },\n  {\n    \"updated\": 8897.214189139944,\n    \"country\": \"string\",\n    \"countryInfo\": {\n      \"_id\": 9401.018079378488,\n      \"iso2\": \"string\",\n      \"iso3\": \"string\",\n      \"lat\": 9799.53319462787,\n      \"long\": 4651.087094621527,\n      \"flag\": \"string\"\n    },\n    \"cases\": 5010.726195316447,\n    \"todayCases\": 7031.856777280729,\n    \"deaths\": 9790.145977685333,\n    \"todayDeaths\": 6668.148028217907,\n    \"recovered\": 8611.137602353878,\n    \"todayRecovered\": 2539.3243898289206,\n    \"active\": 3356.4202676626196,\n    \"critical\": 1737.9050428955156,\n    \"casesPerOneMillion\": 3913.9584293437524,\n    \"deathsPerOneMillion\": 3175.488035946122,\n    \"tests\": 8899.772831015798,\n    \"testsPerOneMillion\": 7937.884753466455,\n    \"population\": 69.47648199591706,\n    \"continent\": 3364.800624583364,\n    \"oneCasePerPeople\": 4711.257196736632,\n    \"oneDeathPerPeople\": 6825.170191714088,\n    \"oneTestPerPeople\": 2734.890137605277,\n    \"activePerOneMillion\": 1647.5687812856,\n    \"recoveredPerOneMillion\": 9082.561560279524,\n    \"criticalPerOneMillion\": 3718.5643599955665\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6fb6dcd3-f8ab-4f7f-8223-4c00e803c51c",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Worldometers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

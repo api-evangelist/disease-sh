@@ -1,0 +1,251 @@
+{
+  "item": [
+    {
+      "id": "3d36a877-213e-413c-9fcf-8af0928bdcb7",
+      "name": "Influenza: CDC",
+      "description": {
+        "content": "(Influenza data reported by the United States CDC, updated every 24 hours)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "de16274b-c539-45be-96c8-54f4c7936e97",
+          "name": "Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control",
+          "request": {
+            "name": "Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "influenza",
+                "cdc",
+                "ILINet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed2188f1-55c9-406f-ba39-3dc7f54509a3",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "influenza",
+                    "cdc",
+                    "ILINet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 4495.970344845354,\n  \"source\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28530848-f180-463e-be94-e6d92148b204",
+          "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs",
+          "request": {
+            "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "influenza",
+                "cdc",
+                "USCL"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a73743c-4b36-437c-b104-56b2864fc969",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "influenza",
+                    "cdc",
+                    "USCL"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 4495.970344845354,\n  \"source\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a733a3c-1081-4d13-b695-f35cf5e0ff7a",
+          "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs",
+          "request": {
+            "name": "Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "influenza",
+                "cdc",
+                "USPHL"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "20cb5711-cc10-4b69-aa7b-613028ebb977",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "influenza",
+                    "cdc",
+                    "USPHL"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updated\": 4495.970344845354,\n  \"source\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "045d5631-d7ec-4b45-ab1d-a55adeb20d6d",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple Influenza: CDC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}

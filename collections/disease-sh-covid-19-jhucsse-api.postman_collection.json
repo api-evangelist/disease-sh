@@ -1,0 +1,1064 @@
+{
+  "item": [
+    {
+      "id": "9211ea92-7040-472a-a4b3-abf99a04fb1d",
+      "name": "COVID-19: JHUCSSE",
+      "description": {
+        "content": "(COVID-19 data sourced from Johns Hopkins University, updated every 10 minutes)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "faf8929c-88f5-42ff-96b4-62a0224763b7",
+          "name": "Get COVID-19 totals for all countries and their provinces",
+          "request": {
+            "name": "Get COVID-19 totals for all countries and their provinces",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "jhucsse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4b939ac-48d7-4942-babf-6f37e3a72aa5",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "jhucsse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"string\",\n  \"county\": \"string\",\n  \"updatedAt\": \"string\",\n  \"stats\": {\n    \"confirmed\": 7217.461798865626,\n    \"deaths\": 1619.7688369296104,\n    \"recovered\": 6849.951519706121\n  },\n  \"coordinates\": {\n    \"latitude\": \"string\",\n    \"longitude\": \"string\"\n  },\n  \"province\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5d84b80-de75-47e8-8a8b-bb00a482558e",
+          "name": "Get COVID-19 totals for all US counties",
+          "request": {
+            "name": "Get COVID-19 totals for all US counties",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "jhucsse",
+                "counties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc5c1bda-b25a-461b-8260-94c9a9067a8a",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "jhucsse",
+                    "counties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"updatedAt\": \"string\",\n    \"stats\": {\n      \"confirmed\": 3145.300026084793,\n      \"deaths\": 3819.2641382910606,\n      \"recovered\": 7737.468215810386\n    },\n    \"coordinates\": {\n      \"latitude\": \"string\",\n      \"longitude\": \"string\"\n    }\n  },\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"updatedAt\": \"string\",\n    \"stats\": {\n      \"confirmed\": 2290.660459301104,\n      \"deaths\": 2102.622842120764,\n      \"recovered\": 471.1970633119655\n    },\n    \"coordinates\": {\n      \"latitude\": \"string\",\n      \"longitude\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0f86c12-e18b-4019-8b1d-a45357f42d4a",
+          "name": "Get COVID-19 totals for a specific county",
+          "request": {
+            "name": "Get COVID-19 totals for a specific county",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "jhucsse",
+                "counties",
+                ":county"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "county",
+                  "description": "(Required) Name of any county in the USA. All counties are listed in the /v3/covid-19/jhucsse/counties/ endpoint"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35eae7f1-9ffc-495b-a93b-f76ae3dcafb9",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "jhucsse",
+                    "counties",
+                    ":county"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "county",
+                      "description": "(Required) Name of any county in the USA. All counties are listed in the /v3/covid-19/jhucsse/counties/ endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"updatedAt\": \"string\",\n    \"stats\": {\n      \"confirmed\": 2030.1937534166213,\n      \"deaths\": 5574.320892433079,\n      \"recovered\": 9361.886642432943\n    },\n    \"coordinates\": {\n      \"latitude\": \"string\",\n      \"longitude\": \"string\"\n    }\n  },\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"updatedAt\": \"string\",\n    \"stats\": {\n      \"confirmed\": 8811.818667523887,\n      \"deaths\": 1275.7435406590712,\n      \"recovered\": 9741.994531447568\n    },\n    \"coordinates\": {\n      \"latitude\": \"string\",\n      \"longitude\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cda3e32d-70ca-4476-9654-0afd4deacfa2",
+          "name": "Get COVID-19 time series data for all countries and their provinces",
+          "request": {
+            "name": "Get COVID-19 time series data for all countries and their provinces",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8259c06-312a-4121-a9ec-013076e6021b",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 4864.366742760666\n      },\n      \"deaths\": {\n        \"date\": 5364.392418299726\n      },\n      \"recovered\": {\n        \"date\": 4175.737791001071\n      }\n    }\n  },\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 3360.4351950820433\n      },\n      \"deaths\": {\n        \"date\": 5184.285223056147\n      },\n      \"recovered\": {\n        \"date\": 9145.864928406938\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b852164-0bee-4460-aabc-a06070338928",
+          "name": "Get global accumulated COVID-19 time series data",
+          "request": {
+            "name": "Get global accumulated COVID-19 time series data",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3e3e38d-cdd3-4d23-b9a5-ab8334b27eff",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cases\": {\n    \"date\": 9995.279716685674\n  },\n  \"deaths\": {\n    \"date\": 1548.6407092756094\n  },\n  \"recovered\": {\n    \"date\": 9551.042776137121\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a2bf44b-13fb-4f17-9069-e1ccb4ac34bf",
+          "name": "Get COVID-19 time series data for a specific country",
+          "request": {
+            "name": "Get COVID-19 time series data for a specific country",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A country name, iso2, iso3, or country ID code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2f89940-05d8-4861-ad83-d14c2b574670",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A country name, iso2, iso3, or country ID code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"string\",\n  \"province\": [\n    \"string\",\n    \"string\"\n  ],\n  \"timeline\": {\n    \"cases\": {\n      \"date\": 1117.813735001636\n    },\n    \"deaths\": {\n      \"date\": 362.2040917842084\n    },\n    \"recovered\": {\n      \"date\": 6894.7689362432575\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c78b3d5a-b6ec-4751-aa84-b9aff2360954",
+          "name": "Get COVID-19 time series data for a specific set of countries",
+          "request": {
+            "name": "Get COVID-19 time series data for a specific set of countries",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                ":countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "countries",
+                  "description": "(Required) Multiple country names, iso2, iso3, or country IDs separated by commas"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d67529d-b1a9-4948-9237-16f1a8166bfc",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    ":countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "countries",
+                      "description": "(Required) Multiple country names, iso2, iso3, or country IDs separated by commas"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"string\",\n    \"province\": [\n      \"string\",\n      \"string\"\n    ],\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 8538.326764333855\n      },\n      \"deaths\": {\n        \"date\": 6939.753801106491\n      },\n      \"recovered\": {\n        \"date\": 8993.950087537249\n      }\n    }\n  },\n  {\n    \"country\": \"string\",\n    \"province\": [\n      \"string\",\n      \"string\"\n    ],\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 5147.193094308672\n      },\n      \"deaths\": {\n        \"date\": 8309.834994794133\n      },\n      \"recovered\": {\n        \"date\": 7278.94740756721\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21c0bbd6-f24c-49f4-adcb-a3408b796d2c",
+          "name": "Get COVID-19 time series data for a specific province in a country",
+          "request": {
+            "name": "Get COVID-19 time series data for a specific province in a country",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                ":country",
+                ":province"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A country name, iso2, iso3, or country ID code"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "province",
+                  "description": "(Required) Province name. All available names can be found in the /v3/covid-19/historical/{query} endpoint"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46ce3fd7-1914-4de1-a701-e1eb1487a470",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    ":country",
+                    ":province"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A country name, iso2, iso3, or country ID code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "province",
+                      "description": "(Required) Province name. All available names can be found in the /v3/covid-19/historical/{query} endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"country\": \"string\",\n  \"province\": \"string\",\n  \"timeline\": {\n    \"cases\": {\n      \"date\": 7669.027480930296\n    },\n    \"deaths\": {\n      \"date\": 2301.3796737735247\n    },\n    \"recovered\": {\n      \"date\": 1935.358241263735\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "922928ff-6baf-4226-9634-c67766437c1c",
+          "name": "Get COVID-19 time series data for a set of provinces in a country",
+          "request": {
+            "name": "Get COVID-19 time series data for a set of provinces in a country",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                ":country",
+                ":provinces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "country",
+                  "description": "(Required) A country name, iso2, iso3, or country ID code"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "provinces",
+                  "description": "(Required) Provinces spelled correctly separated by ',' or '|' delimiters, never both in the same query"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66e4f10c-cd05-4ed0-9c68-3887a63aeb22",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    ":country",
+                    ":provinces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "country",
+                      "description": "(Required) A country name, iso2, iso3, or country ID code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "provinces",
+                      "description": "(Required) Provinces spelled correctly separated by ',' or '|' delimiters, never both in the same query"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 4864.366742760666\n      },\n      \"deaths\": {\n        \"date\": 5364.392418299726\n      },\n      \"recovered\": {\n        \"date\": 4175.737791001071\n      }\n    }\n  },\n  {\n    \"country\": \"string\",\n    \"province\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 3360.4351950820433\n      },\n      \"deaths\": {\n        \"date\": 5184.285223056147\n      },\n      \"recovered\": {\n        \"date\": 9145.864928406938\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be6631db-2267-4326-ba3f-d92502339c55",
+          "name": "Get all possible US States to query the /historical/usacounties/{state} endpoint with",
+          "request": {
+            "name": "Get all possible US States to query the /historical/usacounties/{state} endpoint with",
+            "description": {
+              "content": "Returns a list of US States and provinces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                "usacounties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df76cee4-e598-4935-838d-1701ad3f549c",
+              "name": "Status OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    "usacounties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d320709-c920-451e-8bdd-85e03c0ec661",
+          "name": "Get COVID-19 time series data for all counties in a specified US state",
+          "request": {
+            "name": "Get COVID-19 time series data for all counties in a specified US state",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "covid-19",
+                "historical",
+                "usacounties",
+                ":state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Number of days to return. Use 'all' for the full data set (e.g. 15, all, 24)",
+                    "type": "text/plain"
+                  },
+                  "key": "lastdays",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "state",
+                  "description": "(Required) US state name, validated in the array returned from the /v3/covid-19/historical/usacounties endpoint"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6f299c9-d270-4699-8f49-821d81223269",
+              "name": "Status Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "covid-19",
+                    "historical",
+                    "usacounties",
+                    ":state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastdays",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "state",
+                      "description": "(Required) US state name, validated in the array returned from the /v3/covid-19/historical/usacounties endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 5631.162239729652\n      },\n      \"deaths\": {\n        \"date\": 6.929874245868994\n      },\n      \"recovered\": {\n        \"date\": 7056.0822023022965\n      }\n    }\n  },\n  {\n    \"province\": \"string\",\n    \"county\": \"string\",\n    \"timeline\": {\n      \"cases\": {\n        \"date\": 7097.95907846249\n      },\n      \"deaths\": {\n        \"date\": 9696.10553518613\n      },\n      \"recovered\": {\n        \"date\": 6859.4335252929795\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f917cd76-b2b2-4558-9137-e16e3f82bcb8",
+    "name": "disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: JHUCSSE API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Third Party API for reliable global disease information",
+      "type": "text/plain"
+    }
+  }
+}
