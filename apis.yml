@@ -7,6 +7,18 @@ description: >-
   data from the CDC, and mobility metrics from Apple and government sources.
   The API is completely free to use, requires no authentication, and supports
   CORS for browser-based integrations.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: open
