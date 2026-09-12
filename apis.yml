@@ -260,6 +260,8 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/disease-sh/refs/heads/main/finops/finops.yml
 common:
+  - type: Website
+    url: https://disease.sh/
   - type: AgenticAccess
     url: agentic-access/disease-sh-agentic-access.yml
   - type: DomainSecurity
