@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple Influenza: CDC API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -23,7 +23,7 @@ paths:
     get:
       tags:
       - 'Influenza: CDC'
-      summary: Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US Center for Disease Control
+      summary: Get Influenza-like-illness data for the 2019 and 2020 outbreaks from the US…
       responses:
         '200':
           description: Status Ok
@@ -31,11 +31,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/influenzaILINet'
+      operationId: getV3InfluenzaCdcILINet
+      x-operation-id-source: derived
   /v3/influenza/cdc/USCL:
     get:
       tags:
       - 'Influenza: CDC'
-      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US clinical labs
+      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center…
       responses:
         '200':
           description: Status Ok
@@ -43,11 +45,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/influenzaUSCL'
+      operationId: getV3InfluenzaCdcUSCL
+      x-operation-id-source: derived
   /v3/influenza/cdc/USPHL:
     get:
       tags:
       - 'Influenza: CDC'
-      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center for Disease Control, reported by US public health labs
+      summary: Get Influenza report data for the 2019 and 2020 outbreaks from the US Center…
       responses:
         '200':
           description: Status Ok
@@ -55,55 +59,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/influenzaUSPHL'
+      operationId: getV3InfluenzaCdcUSPHL
+      x-operation-id-source: derived
 components:
   schemas:
-    ILINet:
-      properties:
-        week:
-          type: string
-        age 5-24:
-          type: number
-        age 25-49:
-          type: number
-        age 50-64:
-          type: number
-        age 64+:
-          type: number
-        totalILI:
-          type: number
-        totalPatients:
-          type: number
-        percentUnweightedILI:
-          type: number
-        percentWeightedILI:
-          type: number
-    influenzaUSCL:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/USCL'
-    influenzaUSPHL:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/USPHL'
-    influenzaILINet:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/ILINet'
     USPHL:
       properties:
         week:
@@ -124,6 +83,26 @@ components:
           type: number
         totalTests:
           type: number
+    ILINet:
+      properties:
+        week:
+          type: string
+        age 5-24:
+          type: number
+        age 25-49:
+          type: number
+        age 50-64:
+          type: number
+        age 64+:
+          type: number
+        totalILI:
+          type: number
+        totalPatients:
+          type: number
+        percentUnweightedILI:
+          type: number
+        percentWeightedILI:
+          type: number
     USCL:
       properties:
         week:
@@ -140,6 +119,33 @@ components:
           type: number
         percentPositive:
           type: number
+    influenzaUSPHL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USPHL'
+    influenzaUSCL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USCL'
+    influenzaILINet:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/ILINet'
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

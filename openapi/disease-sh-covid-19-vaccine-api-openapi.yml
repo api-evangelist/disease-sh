@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Vaccine API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -23,7 +23,7 @@ paths:
     get:
       tags:
       - 'COVID-19: Vaccine'
-      summary: Get vaccine trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker
+      summary: Get vaccine trial data from RAPS (Regulatory Affairs Professional Society).
       responses:
         '200':
           description: Status Ok
@@ -31,6 +31,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/vaccines'
+      operationId: getV3Covid19Vaccine
+      x-operation-id-source: derived
   /v3/covid-19/vaccine/coverage:
     get:
       tags:
@@ -46,7 +48,7 @@ paths:
         default: 'false'
         description: Flag indicating whether to return data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
         type: string
-      summary: Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/
+      summary: Get total global COVID-19 vaccine doses administered.
       responses:
         '200':
           description: Status Ok
@@ -59,6 +61,8 @@ paths:
                   $ref: '#/components/examples/simpleVaccineTimeline'
                 fullTimeline:
                   $ref: '#/components/examples/fullVaccineTimeline'
+      operationId: getV3Covid19VaccineCoverage
+      x-operation-id-source: derived
   /v3/covid-19/vaccine/coverage/countries:
     get:
       tags:
@@ -74,7 +78,7 @@ paths:
         default: 'false'
         description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
         type: string
-      summary: Get COVID-19 vaccine doses administered for all countries that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/
+      summary: Get COVID-19 vaccine doses administered for all countries that have reported…
       responses:
         '200':
           description: Status Ok
@@ -87,6 +91,8 @@ paths:
                   $ref: '#/components/examples/countriesSimpleVaccineTimeline'
                 fullTimeline:
                   $ref: '#/components/examples/countriesFullVaccineTimeline'
+      operationId: getV3Covid19VaccineCoverageCountries
+      x-operation-id-source: derived
   /v3/covid-19/vaccine/coverage/countries/{country}:
     get:
       tags:
@@ -107,7 +113,7 @@ paths:
         default: 'false'
         description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
         type: string
-      summary: Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/
+      summary: Get COVID-19 vaccine doses administered for a country that has reported…
       responses:
         '200':
           description: Status Ok
@@ -120,6 +126,8 @@ paths:
                   $ref: '#/components/examples/countrySimpleVaccineTimeline'
                 fullTimeline:
                   $ref: '#/components/examples/countryFullVaccineTimeline'
+      operationId: getV3Covid19VaccineCoverageCountriesByCountry
+      x-operation-id-source: derived
   /v3/covid-19/vaccine/coverage/states:
     get:
       tags:
@@ -135,7 +143,7 @@ paths:
         default: 'false'
         description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
         type: string
-      summary: Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced  from https://covid.ourworldindata.org/
+      summary: Get COVID-19 vaccine doses administered for all states that have reported…
       responses:
         '200':
           description: Status Ok
@@ -148,6 +156,8 @@ paths:
                   $ref: '#/components/examples/statesSimpleVaccineTimeline'
                 fullTimeline:
                   $ref: '#/components/examples/statesFullVaccineTimeline'
+      operationId: getV3Covid19VaccineCoverageStates
+      x-operation-id-source: derived
   /v3/covid-19/vaccine/coverage/states/{state}:
     get:
       tags:
@@ -168,7 +178,7 @@ paths:
         default: 'false'
         description: Flag indicating whether to return timeline data type as simpleVaccineTimeline (false) or fullVaccineTimeline (true).
         type: string
-      summary: Get COVID-19 vaccine doses administered for a state that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/
+      summary: Get COVID-19 vaccine doses administered for a state that has reported…
       responses:
         '200':
           description: Status Ok
@@ -181,85 +191,29 @@ paths:
                   $ref: '#/components/examples/stateSimpleVaccineTimeline'
                 fullTimeline:
                   $ref: '#/components/examples/stateFullVaccineTimeline'
+      operationId: getV3Covid19VaccineCoverageStatesByState
+      x-operation-id-source: derived
 components:
-  examples:
-    stateFullVaccineTimeline:
-      value:
-        state: California
-        timeline:
-        - total: 1000
-          daily: 1000
-          totalPerHundred: 1000
-          dailyPerMillion: 1000
-          date: 4/25/2021
-      summary: Full Vaccine Timeline
-    statesFullVaccineTimeline:
-      value:
-      - state: California
-        timeline:
-        - total: 1000
-          daily: 1000
-          totalPerHundred: 1000
-          dailyPerMillion: 1000
-          date: 4/25/2021
-      summary: Full Vaccine Timeline
-    simpleVaccineTimeline:
-      value:
-        4/25/2021: 1000
-      summary: Simple Vaccine Timeline
-    fullVaccineTimeline:
-      value:
-      - total: 1000
-        daily: 1000
-        totalPerHundred: 1000
-        dailyPerMillion: 1000
-        date: 4/25/2021
-      summary: Full Vaccine Timeline
-    countriesSimpleVaccineTimeline:
-      value:
-      - country: USA
-        timeline:
-          4/25/2021: 1000
-      summary: Simple Vaccine Timeline
-    countriesFullVaccineTimeline:
-      value:
-      - country: USA
-        timeline:
-        - total: 1000
-          daily: 1000
-          totalPerHundred: 1000
-          dailyPerMillion: 1000
-          date: 4/25/2021
-      summary: Full Vaccine Timeline
-    countrySimpleVaccineTimeline:
-      value:
-        country: USA
-        timeline:
-          4/25/2021: 1000
-      summary: Simple Vaccine Timeline
-    statesSimpleVaccineTimeline:
-      value:
-      - state: California
-        timeline:
-          4/25/2021: 1000
-      summary: Simple Vaccine Timeline
-    countryFullVaccineTimeline:
-      value:
-        country: USA
-        timeline:
-        - total: 1000
-          daily: 1000
-          totalPerHundred: 1000
-          dailyPerMillion: 1000
-          date: 4/25/2021
-      summary: Full Vaccine Timeline
-    stateSimpleVaccineTimeline:
-      value:
-        state: California
-        timeline:
-          4/25/2021: 1000
-      summary: Simple Vaccine Timeline
   schemas:
+    vaccineStatesCoverage:
+      type: array
+      items:
+        $ref: '#/components/schemas/vaccineStateCoverage'
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
+          type: string
+    vaccineCountriesCoverage:
+      type: array
+      items:
+        $ref: '#/components/schemas/vaccineCountryCoverage'
+    simpleVaccineTimeline:
+      type: object
+      properties:
+        date:
+          type: number
     vaccineCoverage:
       oneOf:
       - $ref: '#/components/schemas/simpleVaccineTimeline'
@@ -268,6 +222,47 @@ components:
       type: object
       properties:
         country:
+          type: string
+        timeline:
+          oneOf:
+          - $ref: '#/components/schemas/simpleVaccineTimeline'
+          - $ref: '#/components/schemas/fullVaccineTimeline'
+    vaccines:
+      properties:
+        source:
+          type: string
+        totalCandidates:
+          type: string
+        phases:
+          type: array
+          items:
+            $ref: '#/components/schemas/phases'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vaccine'
+    vaccine:
+      properties:
+        candidate:
+          type: string
+        mechanism:
+          type: string
+        sponsors:
+          type: array
+          items:
+            type: string
+        details:
+          type: string
+        trialPhase:
+          type: string
+        institutions:
+          type: array
+          items:
+            type: string
+    vaccineStateCoverage:
+      type: object
+      properties:
+        state:
           type: string
         timeline:
           oneOf:
@@ -288,66 +283,83 @@ components:
             type: number
           date:
             type: string
-    simpleVaccineTimeline:
-      type: object
-      properties:
-        date:
-          type: number
-    vaccines:
-      properties:
-        source:
-          type: string
-        totalCandidates:
-          type: string
-        phases:
-          type: array
-          items:
-            $ref: '#/components/schemas/phases'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/vaccine'
-    vaccineStateCoverage:
-      type: object
-      properties:
-        state:
-          type: string
+  examples:
+    countriesFullVaccineTimeline:
+      value:
+      - country: USA
         timeline:
-          oneOf:
-          - $ref: '#/components/schemas/simpleVaccineTimeline'
-          - $ref: '#/components/schemas/fullVaccineTimeline'
-    phases:
-      properties:
-        phase:
-          type: string
-        candidates:
-          type: string
-    vaccine:
-      properties:
-        candidate:
-          type: string
-        mechanism:
-          type: string
-        sponsors:
-          type: array
-          items:
-            type: string
-        details:
-          type: string
-        trialPhase:
-          type: string
-        institutions:
-          type: array
-          items:
-            type: string
-    vaccineCountriesCoverage:
-      type: array
-      items:
-        $ref: '#/components/schemas/vaccineCountryCoverage'
-    vaccineStatesCoverage:
-      type: array
-      items:
-        $ref: '#/components/schemas/vaccineStateCoverage'
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    statesFullVaccineTimeline:
+      value:
+      - state: California
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    countriesSimpleVaccineTimeline:
+      value:
+      - country: USA
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    fullVaccineTimeline:
+      value:
+      - total: 1000
+        daily: 1000
+        totalPerHundred: 1000
+        dailyPerMillion: 1000
+        date: 4/25/2021
+      summary: Full Vaccine Timeline
+    countrySimpleVaccineTimeline:
+      value:
+        country: USA
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    stateSimpleVaccineTimeline:
+      value:
+        state: California
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    statesSimpleVaccineTimeline:
+      value:
+      - state: California
+        timeline:
+          4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    simpleVaccineTimeline:
+      value:
+        4/25/2021: 1000
+      summary: Simple Vaccine Timeline
+    stateFullVaccineTimeline:
+      value:
+        state: California
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
+    countryFullVaccineTimeline:
+      value:
+        country: USA
+        timeline:
+        - total: 1000
+          daily: 1000
+          totalPerHundred: 1000
+          dailyPerMillion: 1000
+          date: 4/25/2021
+      summary: Full Vaccine Timeline
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

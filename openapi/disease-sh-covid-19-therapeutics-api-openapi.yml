@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Therapeutics API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -23,7 +23,7 @@ paths:
     get:
       tags:
       - 'COVID-19: Therapeutics'
-      summary: Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society). Specifically published by Jeff Craven at https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker
+      summary: Get therapeutics trial data from RAPS (Regulatory Affairs Professional Society).
       responses:
         '200':
           description: Status Ok
@@ -31,6 +31,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/therapeutics'
+      operationId: getV3Covid19Therapeutics
+      x-operation-id-source: derived
 components:
   schemas:
     therapeutic:

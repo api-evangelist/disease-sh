@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Worldometers API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -59,6 +59,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidAll'
+      operationId: getV3Covid19All
+      x-operation-id-source: derived
   /v3/covid-19/states:
     get:
       tags:
@@ -100,6 +102,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidStates'
+      operationId: getV3Covid19States
+      x-operation-id-source: derived
   /v3/covid-19/states/{states}:
     get:
       tags:
@@ -136,6 +140,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidState'
+      operationId: getV3Covid19StatesByStates
+      x-operation-id-source: derived
   /v3/covid-19/continents:
     get:
       tags:
@@ -190,6 +196,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidContinents'
+      operationId: getV3Covid19Continents
+      x-operation-id-source: derived
   /v3/covid-19/continents/{continent}:
     get:
       tags:
@@ -243,6 +251,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidContinent'
+      operationId: getV3Covid19ContinentsByContinent
+      x-operation-id-source: derived
   /v3/covid-19/countries:
     get:
       tags:
@@ -297,6 +307,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidCountries'
+      operationId: getV3Covid19Countries
+      x-operation-id-source: derived
   /v3/covid-19/countries/{country}:
     get:
       tags:
@@ -350,6 +362,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidCountry'
+      operationId: getV3Covid19CountriesByCountry
+      x-operation-id-source: derived
   /v3/covid-19/countries/{countries}:
     get:
       tags:
@@ -395,57 +409,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidCountries'
+      operationId: getV3Covid19CountriesByCountries
+      x-operation-id-source: derived
 components:
   schemas:
-    covidContinent:
-      properties:
-        updated:
-          type: number
-        cases:
-          type: number
-        todayCases:
-          type: number
-        deaths:
-          type: number
-        todayDeaths:
-          type: number
-        recovered:
-          type: number
-        todayRecovered:
-          type: number
-        active:
-          type: number
-        critical:
-          type: number
-        casesPerOneMillion:
-          type: number
-        deathsPerOneMillion:
-          type: number
-        tests:
-          type: number
-        testsPerOneMillion:
-          type: number
-        population:
-          type: number
-        continent:
-          type: string
-        activePerOneMillion:
-          type: number
-        recoveredPerOneMillion:
-          type: number
-        criticalPerOneMillion:
-          type: number
-        continentInfo:
-          type: object
-          properties:
-            lat:
-              type: number
-            long:
-              type: number
-        countries:
-          type: array
-          items:
-            type: string
+    covidCountries:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidCountry'
     covidCountry:
       properties:
         updated:
@@ -510,6 +481,59 @@ components:
           type: number
         criticalPerOneMillion:
           type: number
+    covidContinents:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidContinent'
+    covidContinent:
+      properties:
+        updated:
+          type: number
+        cases:
+          type: number
+        todayCases:
+          type: number
+        deaths:
+          type: number
+        todayDeaths:
+          type: number
+        recovered:
+          type: number
+        todayRecovered:
+          type: number
+        active:
+          type: number
+        critical:
+          type: number
+        casesPerOneMillion:
+          type: number
+        deathsPerOneMillion:
+          type: number
+        tests:
+          type: number
+        testsPerOneMillion:
+          type: number
+        population:
+          type: number
+        continent:
+          type: string
+        activePerOneMillion:
+          type: number
+        recoveredPerOneMillion:
+          type: number
+        criticalPerOneMillion:
+          type: number
+        continentInfo:
+          type: object
+          properties:
+            lat:
+              type: number
+            long:
+              type: number
+        countries:
+          type: array
+          items:
+            type: string
     covidAll:
       properties:
         updated:
@@ -552,10 +576,6 @@ components:
           type: number
         affectedCountries:
           type: number
-    covidStates:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidState'
     covidState:
       properties:
         state:
@@ -582,14 +602,10 @@ components:
           type: number
         population:
           type: number
-    covidContinents:
+    covidStates:
       type: array
       items:
-        $ref: '#/components/schemas/covidContinent'
-    covidCountries:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidCountry'
+        $ref: '#/components/schemas/covidState'
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

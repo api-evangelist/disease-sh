@@ -1,15 +1,7 @@
 {
   "provider": "disease-sh",
   "sources": [
-    "disease-sh-covid-19-apple-api-openapi.yml",
-    "disease-sh-covid-19-government-api-openapi.yml",
-    "disease-sh-covid-19-jhucsse-api-openapi.yml",
-    "disease-sh-covid-19-nyt-api-openapi.yml",
-    "disease-sh-covid-19-therapeutics-api-openapi.yml",
-    "disease-sh-covid-19-vaccine-api-openapi.yml",
-    "disease-sh-covid-19-variants-api-openapi.yml",
-    "disease-sh-covid-19-worldometers-api-openapi.yml",
-    "disease-sh-influenza-cdc-api-openapi.yml"
+    "_original/openapi.json"
   ],
   "outputs": [
     "disease-sh-covid-19-apple-api-openapi.yml",
@@ -25,6 +17,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "disease-sh-covid-19-apple-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-government-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-jhucsse-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-nyt-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-therapeutics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-vaccine-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-variants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-covid-19-worldometers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "disease-sh-influenza-cdc-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

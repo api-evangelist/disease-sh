@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple COVID-19: Variants API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -17,7 +17,7 @@ produces:
 - application/json
 tags:
 - name: 'COVID-19: Variants'
-  description: (COVID-19 data from The European Surveillance System -TESSy, provided by [Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden]  https://www.ecdc.europa.eu and released by ECDC updated every week)
+  description: (COVID-19 data from The European Surveillance System -TESSy, provided by [Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden] https://www.ecdc.europa.eu and released by ECDC updated every week)
 paths:
   /v3/covid-19/variants/countries/:
     get:
@@ -32,6 +32,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/variantsECDC'
+      operationId: getV3Covid19VariantsCountries
+      x-operation-id-source: derived
   /v3/covid-19/variants/countries/{country}:
     get:
       tags:
@@ -59,6 +61,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/variantsCountriesECDC'
+      operationId: getV3Covid19VariantsCountriesByCountry
+      x-operation-id-source: derived
 components:
   schemas:
     variantsCountriesECDC:

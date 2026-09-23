@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 3.0.0
-  title: 'disease.sh Docs - An open API for disease-related statistics COVID-19: Apple API'
+  title: disease.sh Docs - An open API for disease-related…
   description: Third Party API for reliable global disease information
   license:
     name: GNU V3
@@ -32,6 +32,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidAppleCountries'
+      operationId: getV3Covid19AppleCountries
+      x-operation-id-source: derived
   /v3/covid-19/apple/countries/{country}:
     get:
       tags:
@@ -42,7 +44,7 @@ paths:
         required: true
         description: A valid country name from the /v3/covid-19/apple/countries endpoint
         type: string
-      summary: Get a list of supported subregions for specific country in the Apple mobility data set
+      summary: Get a list of supported subregions for specific country in the Apple mobility…
       description: Returns a list of supported subregions in a country where data is available
       responses:
         '200':
@@ -51,6 +53,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidAppleSubregions'
+      operationId: getV3Covid19AppleCountriesByCountry
+      x-operation-id-source: derived
   /v3/covid-19/apple/countries/{country}/{subregions}:
     get:
       tags:
@@ -75,20 +79,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/covidAppleData'
+      operationId: getV3Covid19AppleCountriesByCountryBySubregions
+      x-operation-id-source: derived
 components:
   schemas:
-    covidAppleSubregions:
-      properties:
-        country:
-          type: string
-        subregions:
-          type: array
-          items:
-            type: string
-    covidAppleCountries:
-      type: array
-      items:
-        type: string
     covidAppleData:
       properties:
         country:
@@ -115,6 +109,18 @@ components:
                 type: number
               walking:
                 type: number
+    covidAppleCountries:
+      type: array
+      items:
+        type: string
+    covidAppleSubregions:
+      properties:
+        country:
+          type: string
+        subregions:
+          type: array
+          items:
+            type: string
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API
