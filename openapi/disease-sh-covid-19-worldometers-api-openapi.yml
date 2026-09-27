@@ -413,10 +413,135 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    covidAll:
+      properties:
+        updated:
+          type: number
+        cases:
+          type: number
+        todayCases:
+          type: number
+        deaths:
+          type: number
+        recovered:
+          type: number
+        todayRecovered:
+          type: number
+        active:
+          type: number
+        critical:
+          type: number
+        casesPerOneMillion:
+          type: number
+        deathsPerOneMillion:
+          type: number
+        tests:
+          type: number
+        testsPerOneMillion:
+          type: number
+        population:
+          type: number
+        oneCasePerPeople:
+          type: number
+        oneDeathPerPeople:
+          type: number
+        oneTestPerPeople:
+          type: number
+        activePerOneMillion:
+          type: number
+        recoveredPerOneMillion:
+          type: number
+        criticalPerOneMillion:
+          type: number
+        affectedCountries:
+          type: number
     covidCountries:
       type: array
       items:
         $ref: '#/components/schemas/covidCountry'
+    covidContinents:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidContinent'
+    covidState:
+      properties:
+        state:
+          type: string
+        updated:
+          type: number
+        cases:
+          type: number
+        todayCases:
+          type: number
+        deaths:
+          type: number
+        todayDeaths:
+          type: number
+        active:
+          type: number
+        casesPerOneMillion:
+          type: number
+        deathsPerOneMillion:
+          type: number
+        tests:
+          type: number
+        testsPerOneMillion:
+          type: number
+        population:
+          type: number
+    covidContinent:
+      properties:
+        updated:
+          type: number
+        cases:
+          type: number
+        todayCases:
+          type: number
+        deaths:
+          type: number
+        todayDeaths:
+          type: number
+        recovered:
+          type: number
+        todayRecovered:
+          type: number
+        active:
+          type: number
+        critical:
+          type: number
+        casesPerOneMillion:
+          type: number
+        deathsPerOneMillion:
+          type: number
+        tests:
+          type: number
+        testsPerOneMillion:
+          type: number
+        population:
+          type: number
+        continent:
+          type: string
+        activePerOneMillion:
+          type: number
+        recoveredPerOneMillion:
+          type: number
+        criticalPerOneMillion:
+          type: number
+        continentInfo:
+          type: object
+          properties:
+            lat:
+              type: number
+            long:
+              type: number
+        countries:
+          type: array
+          items:
+            type: string
+    covidStates:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidState'
     covidCountry:
       properties:
         updated:
@@ -481,131 +606,6 @@ components:
           type: number
         criticalPerOneMillion:
           type: number
-    covidContinents:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidContinent'
-    covidContinent:
-      properties:
-        updated:
-          type: number
-        cases:
-          type: number
-        todayCases:
-          type: number
-        deaths:
-          type: number
-        todayDeaths:
-          type: number
-        recovered:
-          type: number
-        todayRecovered:
-          type: number
-        active:
-          type: number
-        critical:
-          type: number
-        casesPerOneMillion:
-          type: number
-        deathsPerOneMillion:
-          type: number
-        tests:
-          type: number
-        testsPerOneMillion:
-          type: number
-        population:
-          type: number
-        continent:
-          type: string
-        activePerOneMillion:
-          type: number
-        recoveredPerOneMillion:
-          type: number
-        criticalPerOneMillion:
-          type: number
-        continentInfo:
-          type: object
-          properties:
-            lat:
-              type: number
-            long:
-              type: number
-        countries:
-          type: array
-          items:
-            type: string
-    covidAll:
-      properties:
-        updated:
-          type: number
-        cases:
-          type: number
-        todayCases:
-          type: number
-        deaths:
-          type: number
-        recovered:
-          type: number
-        todayRecovered:
-          type: number
-        active:
-          type: number
-        critical:
-          type: number
-        casesPerOneMillion:
-          type: number
-        deathsPerOneMillion:
-          type: number
-        tests:
-          type: number
-        testsPerOneMillion:
-          type: number
-        population:
-          type: number
-        oneCasePerPeople:
-          type: number
-        oneDeathPerPeople:
-          type: number
-        oneTestPerPeople:
-          type: number
-        activePerOneMillion:
-          type: number
-        recoveredPerOneMillion:
-          type: number
-        criticalPerOneMillion:
-          type: number
-        affectedCountries:
-          type: number
-    covidState:
-      properties:
-        state:
-          type: string
-        updated:
-          type: number
-        cases:
-          type: number
-        todayCases:
-          type: number
-        deaths:
-          type: number
-        todayDeaths:
-          type: number
-        active:
-          type: number
-        casesPerOneMillion:
-          type: number
-        deathsPerOneMillion:
-          type: number
-        tests:
-          type: number
-        testsPerOneMillion:
-          type: number
-        population:
-          type: number
-    covidStates:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidState'
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

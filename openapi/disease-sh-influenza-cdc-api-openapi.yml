@@ -83,6 +83,40 @@ components:
           type: number
         totalTests:
           type: number
+    USCL:
+      properties:
+        week:
+          type: string
+        totalA:
+          type: number
+        totalB:
+          type: number
+        percentPositiveA:
+          type: number
+        percentPositiveB:
+          type: number
+        totalTests:
+          type: number
+        percentPositive:
+          type: number
+    influenzaUSCL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USCL'
+    influenzaUSPHL:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/USPHL'
     ILINet:
       properties:
         week:
@@ -103,40 +137,6 @@ components:
           type: number
         percentWeightedILI:
           type: number
-    USCL:
-      properties:
-        week:
-          type: string
-        totalA:
-          type: number
-        totalB:
-          type: number
-        percentPositiveA:
-          type: number
-        percentPositiveB:
-          type: number
-        totalTests:
-          type: number
-        percentPositive:
-          type: number
-    influenzaUSPHL:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/USPHL'
-    influenzaUSCL:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/USCL'
     influenzaILINet:
       properties:
         updated:

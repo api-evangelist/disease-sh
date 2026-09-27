@@ -83,6 +83,18 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    covidAppleSubregions:
+      properties:
+        country:
+          type: string
+        subregions:
+          type: array
+          items:
+            type: string
+    covidAppleCountries:
+      type: array
+      items:
+        type: string
     covidAppleData:
       properties:
         country:
@@ -109,18 +121,6 @@ components:
                 type: number
               walking:
                 type: number
-    covidAppleCountries:
-      type: array
-      items:
-        type: string
-    covidAppleSubregions:
-      properties:
-        country:
-          type: string
-        subregions:
-          type: array
-          items:
-            type: string
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

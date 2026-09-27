@@ -35,6 +35,12 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
+          type: string
     therapeutic:
       properties:
         medicationClass:
@@ -71,12 +77,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/therapeutic'
-    phases:
-      properties:
-        phase:
-          type: string
-        candidates:
-          type: string
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

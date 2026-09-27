@@ -259,24 +259,41 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    covidHistoricalAll:
-      description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+    covidJHUCounties:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidJHUCounty'
+    covidHistoricalUSCounties:
+      type: array
+      items:
+        type: string
+    covidHistoricalCountry:
       properties:
-        cases:
+        country:
+          type: string
+        province:
+          type: array
+          items:
+            type: string
+        timeline:
           type: object
+          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
           properties:
-            date:
-              type: number
-        deaths:
-          type: object
-          properties:
-            date:
-              type: number
-        recovered:
-          type: object
-          properties:
-            date:
-              type: number
+            cases:
+              type: object
+              properties:
+                date:
+                  type: number
+            deaths:
+              type: object
+              properties:
+                date:
+                  type: number
+            recovered:
+              type: object
+              properties:
+                date:
+                  type: number
     covidHistorical:
       type: array
       items:
@@ -305,36 +322,6 @@ components:
                 properties:
                   date:
                     type: number
-    covidJHUCounty:
-      properties:
-        country:
-          type: string
-        province:
-          type: string
-        county:
-          type: string
-        updatedAt:
-          type: string
-        stats:
-          type: object
-          properties:
-            confirmed:
-              type: number
-            deaths:
-              type: number
-            recovered:
-              type: number
-        coordinates:
-          type: object
-          properties:
-            latitude:
-              type: string
-            longitude:
-              type: string
-    covidHistoricalUSCounties:
-      type: array
-      items:
-        type: string
     covidHistoricalUSCounty:
       type: array
       items:
@@ -363,6 +350,79 @@ components:
                 properties:
                   date:
                     type: number
+    covidHistoricalAll:
+      description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+      properties:
+        cases:
+          type: object
+          properties:
+            date:
+              type: number
+        deaths:
+          type: object
+          properties:
+            date:
+              type: number
+        recovered:
+          type: object
+          properties:
+            date:
+              type: number
+    covidHistoricalProvince:
+      properties:
+        country:
+          type: string
+        province:
+          type: string
+        timeline:
+          type: object
+          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
+          properties:
+            cases:
+              type: object
+              properties:
+                date:
+                  type: number
+            deaths:
+              type: object
+              properties:
+                date:
+                  type: number
+            recovered:
+              type: object
+              properties:
+                date:
+                  type: number
+    covidHistoricalProvinces:
+      type: array
+      items:
+        $ref: '#/components/schemas/covidHistoricalProvince'
+    covidJHUCounty:
+      properties:
+        country:
+          type: string
+        province:
+          type: string
+        county:
+          type: string
+        updatedAt:
+          type: string
+        stats:
+          type: object
+          properties:
+            confirmed:
+              type: number
+            deaths:
+              type: number
+            recovered:
+              type: number
+        coordinates:
+          type: object
+          properties:
+            latitude:
+              type: string
+            longitude:
+              type: string
     covidJHUCountries:
       properties:
         country:
@@ -389,70 +449,10 @@ components:
               type: string
         province:
           type: string
-    covidHistoricalProvinces:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidHistoricalProvince'
     covidHistoricalCountries:
       type: array
       items:
         $ref: '#/components/schemas/covidHistoricalCountry'
-    covidHistoricalProvince:
-      properties:
-        country:
-          type: string
-        province:
-          type: string
-        timeline:
-          type: object
-          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
-          properties:
-            cases:
-              type: object
-              properties:
-                date:
-                  type: number
-            deaths:
-              type: object
-              properties:
-                date:
-                  type: number
-            recovered:
-              type: object
-              properties:
-                date:
-                  type: number
-    covidJHUCounties:
-      type: array
-      items:
-        $ref: '#/components/schemas/covidJHUCounty'
-    covidHistoricalCountry:
-      properties:
-        country:
-          type: string
-        province:
-          type: array
-          items:
-            type: string
-        timeline:
-          type: object
-          description: The amount of key-value pairs in 'cases', 'deaths' and 'recovered' is dependent on the 'lastdays' query
-          properties:
-            cases:
-              type: object
-              properties:
-                date:
-                  type: number
-            deaths:
-              type: object
-              properties:
-                date:
-                  type: number
-            recovered:
-              type: object
-              properties:
-                date:
-                  type: number
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API
