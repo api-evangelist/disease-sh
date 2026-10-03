@@ -83,6 +83,10 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    covidAppleCountries:
+      type: array
+      items:
+        type: string
     covidAppleSubregions:
       properties:
         country:
@@ -91,10 +95,6 @@ components:
           type: array
           items:
             type: string
-    covidAppleCountries:
-      type: array
-      items:
-        type: string
     covidAppleData:
       properties:
         country:

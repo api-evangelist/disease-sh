@@ -35,12 +35,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    phases:
-      properties:
-        phase:
-          type: string
-        candidates:
-          type: string
     therapeutic:
       properties:
         medicationClass:
@@ -62,6 +56,12 @@ components:
         trialPhase:
           type: string
         lastUpdate:
+          type: string
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
           type: string
     therapeutics:
       properties:

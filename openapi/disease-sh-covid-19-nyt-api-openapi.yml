@@ -125,18 +125,13 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    covidNYTState:
+    covidNYTUSA:
       type: array
       items:
-        type: object
         properties:
           date:
             type: string
             format: date
-          state:
-            type: string
-          fips:
-            type: string
           cases:
             type: number
           deaths:
@@ -159,13 +154,18 @@ components:
             type: number
           deaths:
             type: number
-    covidNYTUSA:
+    covidNYTState:
       type: array
       items:
+        type: object
         properties:
           date:
             type: string
             format: date
+          state:
+            type: string
+          fips:
+            type: string
           cases:
             type: number
           deaths:
