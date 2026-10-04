@@ -125,17 +125,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    covidNYTUSA:
-      type: array
-      items:
-        properties:
-          date:
-            type: string
-            format: date
-          cases:
-            type: number
-          deaths:
-            type: number
     covidNYTCounty:
       type: array
       items:
@@ -150,6 +139,17 @@ components:
             type: string
           fips:
             type: string
+          cases:
+            type: number
+          deaths:
+            type: number
+    covidNYTUSA:
+      type: array
+      items:
+        properties:
+          date:
+            type: string
+            format: date
           cases:
             type: number
           deaths:

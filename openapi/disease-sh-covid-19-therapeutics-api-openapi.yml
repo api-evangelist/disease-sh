@@ -57,12 +57,6 @@ components:
           type: string
         lastUpdate:
           type: string
-    phases:
-      properties:
-        phase:
-          type: string
-        candidates:
-          type: string
     therapeutics:
       properties:
         source:
@@ -77,6 +71,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/therapeutic'
+    phases:
+      properties:
+        phase:
+          type: string
+        candidates:
+          type: string
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

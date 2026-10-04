@@ -65,6 +65,10 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    variantsECDC:
+      type: array
+      items:
+        type: string
     variantsCountriesECDC:
       type: array
       items:
@@ -95,10 +99,6 @@ components:
             type: number
           percentVariant:
             type: number
-    variantsECDC:
-      type: array
-      items:
-        type: string
 externalDocs:
   description: Find out more about this API
   url: https://github.com/disease-sh/API

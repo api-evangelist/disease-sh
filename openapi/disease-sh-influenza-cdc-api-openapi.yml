@@ -63,6 +63,15 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    influenzaILINet:
+      properties:
+        updated:
+          type: number
+        source:
+          type: string
+        data:
+          items:
+            $ref: '#/components/schemas/ILINet'
     ILINet:
       properties:
         week:
@@ -83,7 +92,23 @@ components:
           type: number
         percentWeightedILI:
           type: number
-    influenzaILINet:
+    USCL:
+      properties:
+        week:
+          type: string
+        totalA:
+          type: number
+        totalB:
+          type: number
+        percentPositiveA:
+          type: number
+        percentPositiveB:
+          type: number
+        totalTests:
+          type: number
+        percentPositive:
+          type: number
+    influenzaUSPHL:
       properties:
         updated:
           type: number
@@ -91,7 +116,7 @@ components:
           type: string
         data:
           items:
-            $ref: '#/components/schemas/ILINet'
+            $ref: '#/components/schemas/USPHL'
     USPHL:
       properties:
         week:
@@ -111,31 +136,6 @@ components:
         BVIC:
           type: number
         totalTests:
-          type: number
-    influenzaUSPHL:
-      properties:
-        updated:
-          type: number
-        source:
-          type: string
-        data:
-          items:
-            $ref: '#/components/schemas/USPHL'
-    USCL:
-      properties:
-        week:
-          type: string
-        totalA:
-          type: number
-        totalB:
-          type: number
-        percentPositiveA:
-          type: number
-        percentPositiveB:
-          type: number
-        totalTests:
-          type: number
-        percentPositive:
           type: number
     influenzaUSCL:
       properties:
